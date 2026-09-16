@@ -1,0 +1,16 @@
+# secrets
+token.txt
+
+# competition data (15 GB) and derived datasets
+data/
+
+# training outputs / weights / logs
+runs/
+logs/
+*.pt
+
+# misc
+__pycache__/
+.DS_Store
+nohup.out
+*.zip
