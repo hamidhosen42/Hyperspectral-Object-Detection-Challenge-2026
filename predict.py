@@ -18,9 +18,10 @@ ap.add_argument('--max_det', type=int, default=300)
 ap.add_argument('--tta', action='store_true')
 ap.add_argument('--device', default='mps')
 ap.add_argument('--out', default='submission.csv')
+ap.add_argument('--split', default='test')
 a = ap.parse_args()
 
-test_dir = os.path.join(ROOT, 'data/yolo', a.kind, 'images/test')
+test_dir = os.path.join(ROOT, 'data/yolo', a.kind, 'images', a.split)
 files = sorted(glob.glob(os.path.join(test_dir, '*')), key=lambda p: int(os.path.splitext(os.path.basename(p))[0]))
 print(len(files), 'test images')
 
