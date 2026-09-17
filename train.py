@@ -27,8 +27,7 @@ for kv in a.extra:
     except Exception: pass
     extra[k] = v
 
-model = YOLO(a.model)
-model.train(
+kw = dict(
     data=os.path.join(ROOT, 'data/yolo', f'data_{a.kind}.yaml'),
     imgsz=a.imgsz, epochs=a.epochs, batch=a.batch, device=a.device, workers=a.workers,
     project=os.path.join(ROOT, 'runs'), name=a.name or f'{a.kind}_{os.path.splitext(os.path.basename(a.model))[0]}',
@@ -37,5 +36,7 @@ model.train(
     hsv_h=0.0 if a.kind == 'hsi' else 0.015, hsv_s=0.0 if a.kind == 'hsi' else 0.7, hsv_v=0.4,
     bgr=0.0, fliplr=0.5, mosaic=1.0, close_mosaic=10, scale=0.5, degrees=0.0,
     patience=25, plots=True, cache=False, amp=False,
-    **extra,
 )
+kw.update(extra)  # CLI overrides win
+model = YOLO(a.model)
+model.train(**kw)
