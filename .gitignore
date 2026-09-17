@@ -14,3 +14,7 @@ __pycache__/
 .DS_Store
 nohup.out
 *.zip
+
+# intermediate predictions
+val_pred*.csv
+val_fused.csv
