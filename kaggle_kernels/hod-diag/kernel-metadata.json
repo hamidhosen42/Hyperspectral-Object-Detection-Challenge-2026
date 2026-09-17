@@ -1,0 +1,1 @@
+{"id": "hosen42/hod-diag", "title": "hod-diag", "code_file": "diag.py", "language": "python", "kernel_type": "script", "is_private": true, "enable_gpu": false, "enable_internet": true, "dataset_sources": ["moderantnoukoussi/hyperspectral-object-detection-challenge-2026"], "kernel_sources": [], "model_sources": [], "competition_sources": []}

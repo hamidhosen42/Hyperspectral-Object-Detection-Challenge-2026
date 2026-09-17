@@ -1,6 +1,6 @@
 #!/bin/zsh
-# After the RGB run has been auto-submitted: train YOLO11m on 16-band input, then validate,
-# ensemble with the RGB model and submit whichever is best on the hold-out val.
+# After the RGB run has been auto-submitted: train YOLO11m on 16-band input and score it on the
+# hold-out val. No ensembling (competition rule: single model only). Submission is decided manually.
 cd "$(dirname "$0")"
 LOG=logs/queue_hsi.log
 while pgrep -f auto_submit.sh >/dev/null; do sleep 60; done
@@ -12,21 +12,5 @@ TP=$!; caffeinate -i -s -w $TP & wait $TP
 echo "[$(date)] HSI training exited ($?)" >> $LOG
 
 python3 predict.py --weights runs/hsi_m1024/weights/best.pt --kind hsi --imgsz 1024 --split val --out val_pred_hsi_m.csv >> $LOG 2>&1
-python3 predict.py --weights runs/rgb_s1024/weights/best.pt --kind rgb --imgsz 1024 --split val --out val_pred_rgb_final.csv >> $LOG 2>&1
-python3 ensemble.py --preds val_pred_rgb_final.csv val_pred_hsi_m.csv --split val --out val_pred_fused.csv >> $LOG 2>&1
 score() { python3 eval_local.py --pred $1 2>/dev/null | grep -E "0.50:0.95 \| area=   all" | grep -oE "[0-9.]+$"; }
-S_RGB=$(score val_pred_rgb_final.csv); S_HSI=$(score val_pred_hsi_m.csv); S_FUSE=$(score val_pred_fused.csv)
-echo "[$(date)] val mAP50-95: rgb=$S_RGB hsi=$S_HSI fused=$S_FUSE" >> $LOG
-
-BEST=rgb; BS=$S_RGB
-[ "$(echo "$S_HSI > $BS" | bc)" = 1 ] && { BEST=hsi; BS=$S_HSI; }
-[ "$(echo "$S_FUSE > $BS" | bc)" = 1 ] && { BEST=fused; BS=$S_FUSE; }
-echo "[$(date)] best on val: $BEST ($BS)" >> $LOG
-if [ "$BEST" = rgb ]; then echo "RGB already submitted; nothing new to submit" >> $LOG; exit 0; fi
-
-python3 predict.py --weights runs/hsi_m1024/weights/best.pt --kind hsi --imgsz 1024 --out submission_hsi_m.csv >> $LOG 2>&1
-if [ "$BEST" = fused ]; then
-  python3 ensemble.py --preds submission_rgb_final.csv submission_hsi_m.csv --out submission_fused.csv >> $LOG 2>&1; F=submission_fused.csv
-else F=submission_hsi_m.csv; fi
-kaggle competitions submit -c hyperspectral-object-detection-challenge-2026 -f $F -m "$BEST: YOLO11m 16-band (+WBF with RGB s) val mAP50-95 $BS" >> $LOG 2>&1
-echo "[$(date)] submitted $F" >> $LOG
+echo "[$(date)] val mAP50-95: hsi_m=$(score val_pred_hsi_m.csv)  (rgb ep40 = 0.693)" >> $LOG
