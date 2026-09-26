@@ -1,0 +1,270 @@
+[{"stream_name":"stdout","time":7.132472386,"data":"     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 46.5/46.5 kB 430.9 kB/s eta 0:00:00\n"}
+,{"stream_name":"stdout","time":8.393610613,"data":"   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 1.4/1.4 MB 6.5 MB/s eta 0:00:00\n"}
+,{"stream_name":"stdout","time":8.564221107,"data":"   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 58.1/58.1 kB 1.3 MB/s eta 0:00:00\n"}
+,{"stream_name":"stdout","time":8.652375641,"data":"   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 91.0/91.0 kB 2.3 MB/s eta 0:00:00\n"}
+,{"stream_name":"stdout","time":18.905947184,"data":"Creating new Ultralytics Settings v0.0.8 file ✅ \n"}
+,{"stream_name":"stdout","time":18.905994683,"data":"View Ultralytics Settings with 'yolo settings' or at '/root/.config/Ultralytics/settings.json'\n"}
+,{"stream_name":"stdout","time":18.905999874,"data":"Update Settings with 'yolo settings key=value', i.e. 'yolo settings runs_dir=path/to/dir'. For help see https://docs.ultralytics.com/usage/settings.\n"}
+,{"stream_name":"stdout","time":21.018241541,"data":"data: /kaggle/input/datasets/moderantnoukoussi/hyperspectral-object-detection-challenge-2026 | device: cpu\n"}
+,{"stream_name":"stdout","time":64.865769686,"data":"WARNING ⚠️ 'half' is deprecated and will be removed in the future. Use 'quantize' instead.\n"}
+,{"stream_name":"stdout","time":81.357540102,"data":"WARNING ⚠️ 'half' is deprecated and will be removed in the future. Use 'quantize' instead.\n"}
+,{"stream_name":"stdout","time":91.155056676,"data":"WARNING ⚠️ 'half' is deprecated and will be removed in the future. Use 'quantize' instead.\n"}
+,{"stream_name":"stdout","time":100.979517249,"data":"WARNING ⚠️ 'half' is deprecated and will be removed in the future. Use 'quantize' instead.\n"}
+,{"stream_name":"stdout","time":110.622171442,"data":"WARNING ⚠️ 'half' is deprecated and will be removed in the future. Use 'quantize' instead.\n"}
+,{"stream_name":"stdout","time":120.36491388,"data":"WARNING ⚠️ 'half' is deprecated and will be removed in the future. Use 'quantize' instead.\n"}
+,{"stream_name":"stdout","time":129.95535666,"data":"WARNING ⚠️ 'half' is deprecated and will be removed in the future. Use 'quantize' instead.\n"}
+,{"stream_name":"stdout","time":139.492262734,"data":"WARNING ⚠️ 'half' is deprecated and will be removed in the future. Use 'quantize' instead.\n"}
+,{"stream_name":"stdout","time":148.779687602,"data":"WARNING ⚠️ 'half' is deprecated and will be removed in the future. Use 'quantize' instead.\n"}
+,{"stream_name":"stdout","time":158.276511463,"data":"WARNING ⚠️ 'half' is deprecated and will be removed in the future. Use 'quantize' instead.\n"}
+,{"stream_name":"stdout","time":167.732191287,"data":"WARNING ⚠️ 'half' is deprecated and will be removed in the future. Use 'quantize' instead.\n"}
+,{"stream_name":"stdout","time":177.11499811,"data":"WARNING ⚠️ 'half' is deprecated and will be removed in the future. Use 'quantize' instead.\n"}
+,{"stream_name":"stdout","time":186.759713581,"data":"WARNING ⚠️ 'half' is deprecated and will be removed in the future. Use 'quantize' instead.\n"}
+,{"stream_name":"stdout","time":196.263481126,"data":"WARNING ⚠️ 'half' is deprecated and will be removed in the future. Use 'quantize' instead.\n"}
+,{"stream_name":"stdout","time":205.752037991,"data":"WARNING ⚠️ 'half' is deprecated and will be removed in the future. Use 'quantize' instead.\n"}
+,{"stream_name":"stdout","time":215.393750202,"data":"WARNING ⚠️ 'half' is deprecated and will be removed in the future. Use 'quantize' instead.\n"}
+,{"stream_name":"stdout","time":224.908877708,"data":"WARNING ⚠️ 'half' is deprecated and will be removed in the future. Use 'quantize' instead.\n"}
+,{"stream_name":"stdout","time":234.404624583,"data":"WARNING ⚠️ 'half' is deprecated and will be removed in the future. Use 'quantize' instead.\n"}
+,{"stream_name":"stdout","time":243.974430014,"data":"WARNING ⚠️ 'half' is deprecated and will be removed in the future. Use 'quantize' instead.\n"}
+,{"stream_name":"stdout","time":251.14375786,"data":"E0a plain: 2224 boxes, 230s\n"}
+,{"stream_name":"stdout","time":251.144654249,"data":"WARNING ⚠️ 'half' is deprecated and will be removed in the future. Use 'quantize' instead.\n"}
+,{"stream_name":"stdout","time":260.380772641,"data":"WARNING ⚠️ 'half' is deprecated and will be removed in the future. Use 'quantize' instead.\n"}
+,{"stream_name":"stdout","time":269.665219229,"data":"WARNING ⚠️ 'half' is deprecated and will be removed in the future. Use 'quantize' instead.\n"}
+,{"stream_name":"stdout","time":278.935540684,"data":"WARNING ⚠️ 'half' is deprecated and will be removed in the future. Use 'quantize' instead.\n"}
+,{"stream_name":"stdout","time":288.258523282,"data":"WARNING ⚠️ 'half' is deprecated and will be removed in the future. Use 'quantize' instead.\n"}
+,{"stream_name":"stdout","time":297.424108409,"data":"WARNING ⚠️ 'half' is deprecated and will be removed in the future. Use 'quantize' instead.\n"}
+,{"stream_name":"stdout","time":306.692784376,"data":"WARNING ⚠️ 'half' is deprecated and will be removed in the future. Use 'quantize' instead.\n"}
+,{"stream_name":"stdout","time":316.045617461,"data":"WARNING ⚠️ 'half' is deprecated and will be removed in the future. Use 'quantize' instead.\n"}
+,{"stream_name":"stdout","time":325.424876796,"data":"WARNING ⚠️ 'half' is deprecated and will be removed in the future. Use 'quantize' instead.\n"}
+,{"stream_name":"stdout","time":334.658144369,"data":"WARNING ⚠️ 'half' is deprecated and will be removed in the future. Use 'quantize' instead.\n"}
+,{"stream_name":"stdout","time":343.93503423,"data":"WARNING ⚠️ 'half' is deprecated and will be removed in the future. Use 'quantize' instead.\n"}
+,{"stream_name":"stdout","time":353.305978104,"data":"WARNING ⚠️ 'half' is deprecated and will be removed in the future. Use 'quantize' instead.\n"}
+,{"stream_name":"stdout","time":362.513651872,"data":"WARNING ⚠️ 'half' is deprecated and will be removed in the future. Use 'quantize' instead.\n"}
+,{"stream_name":"stdout","time":371.716761192,"data":"WARNING ⚠️ 'half' is deprecated and will be removed in the future. Use 'quantize' instead.\n"}
+,{"stream_name":"stdout","time":380.879330637,"data":"WARNING ⚠️ 'half' is deprecated and will be removed in the future. Use 'quantize' instead.\n"}
+,{"stream_name":"stdout","time":390.019026247,"data":"WARNING ⚠️ 'half' is deprecated and will be removed in the future. Use 'quantize' instead.\n"}
+,{"stream_name":"stdout","time":399.15511232,"data":"WARNING ⚠️ 'half' is deprecated and will be removed in the future. Use 'quantize' instead.\n"}
+,{"stream_name":"stdout","time":408.319989143,"data":"WARNING ⚠️ 'half' is deprecated and will be removed in the future. Use 'quantize' instead.\n"}
+,{"stream_name":"stdout","time":417.415808953,"data":"WARNING ⚠️ 'half' is deprecated and will be removed in the future. Use 'quantize' instead.\n"}
+,{"stream_name":"stdout","time":424.419780959,"data":"WARNING ⚠️ 'half' is deprecated and will be removed in the future. Use 'quantize' instead.\n"}
+,{"stream_name":"stdout","time":433.552718289,"data":"WARNING ⚠️ 'half' is deprecated and will be removed in the future. Use 'quantize' instead.\n"}
+,{"stream_name":"stdout","time":442.717858677,"data":"WARNING ⚠️ 'half' is deprecated and will be removed in the future. Use 'quantize' instead.\n"}
+,{"stream_name":"stdout","time":451.812353651,"data":"WARNING ⚠️ 'half' is deprecated and will be removed in the future. Use 'quantize' instead.\n"}
+,{"stream_name":"stdout","time":460.909377103,"data":"WARNING ⚠️ 'half' is deprecated and will be removed in the future. Use 'quantize' instead.\n"}
+,{"stream_name":"stdout","time":470.063576667,"data":"WARNING ⚠️ 'half' is deprecated and will be removed in the future. Use 'quantize' instead.\n"}
+,{"stream_name":"stdout","time":479.223819096,"data":"WARNING ⚠️ 'half' is deprecated and will be removed in the future. Use 'quantize' instead.\n"}
+,{"stream_name":"stdout","time":488.375576869,"data":"WARNING ⚠️ 'half' is deprecated and will be removed in the future. Use 'quantize' instead.\n"}
+,{"stream_name":"stdout","time":497.529400832,"data":"WARNING ⚠️ 'half' is deprecated and will be removed in the future. Use 'quantize' instead.\n"}
+,{"stream_name":"stdout","time":506.602670642,"data":"WARNING ⚠️ 'half' is deprecated and will be removed in the future. Use 'quantize' instead.\n"}
+,{"stream_name":"stdout","time":515.813618533,"data":"WARNING ⚠️ 'half' is deprecated and will be removed in the future. Use 'quantize' instead.\n"}
+,{"stream_name":"stdout","time":525.004364247,"data":"WARNING ⚠️ 'half' is deprecated and will be removed in the future. Use 'quantize' instead.\n"}
+,{"stream_name":"stdout","time":534.195960859,"data":"WARNING ⚠️ 'half' is deprecated and will be removed in the future. Use 'quantize' instead.\n"}
+,{"stream_name":"stdout","time":543.443973303,"data":"WARNING ⚠️ 'half' is deprecated and will be removed in the future. Use 'quantize' instead.\n"}
+,{"stream_name":"stdout","time":552.786380244,"data":"WARNING ⚠️ 'half' is deprecated and will be removed in the future. Use 'quantize' instead.\n"}
+,{"stream_name":"stdout","time":562.007798872,"data":"WARNING ⚠️ 'half' is deprecated and will be removed in the future. Use 'quantize' instead.\n"}
+,{"stream_name":"stdout","time":571.07552319,"data":"WARNING ⚠️ 'half' is deprecated and will be removed in the future. Use 'quantize' instead.\n"}
+,{"stream_name":"stdout","time":580.246330366,"data":"WARNING ⚠️ 'half' is deprecated and will be removed in the future. Use 'quantize' instead.\n"}
+,{"stream_name":"stdout","time":589.410614486,"data":"WARNING ⚠️ 'half' is deprecated and will be removed in the future. Use 'quantize' instead.\n"}
+,{"stream_name":"stderr","time":596.350905781,"data":"/usr/local/lib/python3.12/dist-packages/ensemble_boxes/ensemble_boxes_wbf.py:66: UserWarning: Zero area box skipped: [0.6880671391721631, 1.0, 0.8804637721327485, 1.0].\n"}
+,{"stream_name":"stderr","time":596.351519541,"data":"  warnings.warn(\"Zero area box skipped: {}.\".format(box_part))\n"}
+,{"stream_name":"stderr","time":596.363073424,"data":"/usr/local/lib/python3.12/dist-packages/ensemble_boxes/ensemble_boxes_wbf.py:66: UserWarning: Zero area box skipped: [0.12185608514464728, 1.0, 0.3080485428913985, 1.0].\n"}
+,{"stream_name":"stderr","time":596.363109293,"data":"  warnings.warn(\"Zero area box skipped: {}.\".format(box_part))\n"}
+,{"stream_name":"stderr","time":596.408835086,"data":"/usr/local/lib/python3.12/dist-packages/ensemble_boxes/ensemble_boxes_wbf.py:66: UserWarning: Zero area box skipped: [0.6894282356637423, 1.0, 0.8793203009933722, 1.0].\n"}
+,{"stream_name":"stderr","time":596.408875336,"data":"  warnings.warn(\"Zero area box skipped: {}.\".format(box_part))\n"}
+,{"stream_name":"stderr","time":596.408882656,"data":"/usr/local/lib/python3.12/dist-packages/ensemble_boxes/ensemble_boxes_wbf.py:66: UserWarning: Zero area box skipped: [0.12126284740010246, 1.0, 0.31143050897316854, 1.0].\n"}
+,{"stream_name":"stderr","time":596.408906136,"data":"  warnings.warn(\"Zero area box skipped: {}.\".format(box_part))\n"}
+,{"stream_name":"stderr","time":596.440367907,"data":"/usr/local/lib/python3.12/dist-packages/ensemble_boxes/ensemble_boxes_wbf.py:66: UserWarning: Zero area box skipped: [0.028611196385751856, 1.0, 0.161440375299737, 1.0].\n"}
+,{"stream_name":"stderr","time":596.440411327,"data":"  warnings.warn(\"Zero area box skipped: {}.\".format(box_part))\n"}
+,{"stream_name":"stderr","time":596.45280842,"data":"/usr/local/lib/python3.12/dist-packages/ensemble_boxes/ensemble_boxes_wbf.py:66: UserWarning: Zero area box skipped: [0.12133702047002291, 1.0, 0.3082735329684318, 1.0].\n"}
+,{"stream_name":"stderr","time":596.45284893,"data":"  warnings.warn(\"Zero area box skipped: {}.\".format(box_part))\n"}
+,{"stream_name":"stderr","time":596.500272571,"data":"/usr/local/lib/python3.12/dist-packages/ensemble_boxes/ensemble_boxes_wbf.py:66: UserWarning: Zero area box skipped: [0.6901772791645916, 1.0, 0.8788528138422871, 1.0].\n"}
+,{"stream_name":"stderr","time":596.500312271,"data":"  warnings.warn(\"Zero area box skipped: {}.\".format(box_part))\n"}
+,{"stream_name":"stderr","time":596.511023515,"data":"/usr/local/lib/python3.12/dist-packages/ensemble_boxes/ensemble_boxes_wbf.py:66: UserWarning: Zero area box skipped: [0.685785768531528, 1.0, 0.8792485776154891, 1.0].\n"}
+,{"stream_name":"stderr","time":596.511053995,"data":"  warnings.warn(\"Zero area box skipped: {}.\".format(box_part))\n"}
+,{"stream_name":"stderr","time":596.53591657,"data":"/usr/local/lib/python3.12/dist-packages/ensemble_boxes/ensemble_boxes_wbf.py:66: UserWarning: Zero area box skipped: [0.6916769801980198, 1.0, 0.8784185126276299, 1.0].\n"}
+,{"stream_name":"stderr","time":596.53595485,"data":"  warnings.warn(\"Zero area box skipped: {}.\".format(box_part))\n"}
+,{"stream_name":"stderr","time":596.53596045,"data":"/usr/local/lib/python3.12/dist-packages/ensemble_boxes/ensemble_boxes_wbf.py:66: UserWarning: Zero area box skipped: [0.12116064694848391, 1.0, 0.3079290711053527, 1.0].\n"}
+,{"stream_name":"stderr","time":596.53596491,"data":"  warnings.warn(\"Zero area box skipped: {}.\".format(box_part))\n"}
+,{"stream_name":"stderr","time":596.576443245,"data":"/usr/local/lib/python3.12/dist-packages/ensemble_boxes/ensemble_boxes_wbf.py:66: UserWarning: Zero area box skipped: [0.03076350611357782, 0.0, 0.2465943607487544, 0.0].\n"}
+,{"stream_name":"stderr","time":596.576480425,"data":"  warnings.warn(\"Zero area box skipped: {}.\".format(box_part))\n"}
+,{"stream_name":"stderr","time":596.639387738,"data":"/usr/local/lib/python3.12/dist-packages/ensemble_boxes/ensemble_boxes_wbf.py:66: UserWarning: Zero area box skipped: [0.6919942883027304, 1.0, 0.8788386265274949, 1.0].\n"}
+,{"stream_name":"stderr","time":596.639425908,"data":"  warnings.warn(\"Zero area box skipped: {}.\".format(box_part))\n"}
+,{"stream_name":"stderr","time":596.639431588,"data":"/usr/local/lib/python3.12/dist-packages/ensemble_boxes/ensemble_boxes_wbf.py:66: UserWarning: Zero area box skipped: [0.12125932806135438, 1.0, 0.3084619836748982, 1.0].\n"}
+,{"stream_name":"stderr","time":596.639435868,"data":"  warnings.warn(\"Zero area box skipped: {}.\".format(box_part))\n"}
+,{"stream_name":"stdout","time":596.728836384,"data":"E0a tta: 2917 boxes, 576s\n"}
+,{"stream_name":"stdout","time":602.832522741,"data":"WARNING ⚠️ 'half' is deprecated and will be removed in the future. Use 'quantize' instead.\n"}
+,{"stream_name":"stdout","time":612.007533494,"data":"WARNING ⚠️ 'half' is deprecated and will be removed in the future. Use 'quantize' instead.\n"}
+,{"stream_name":"stdout","time":621.200280617,"data":"WARNING ⚠️ 'half' is deprecated and will be removed in the future. Use 'quantize' instead.\n"}
+,{"stream_name":"stdout","time":630.336909264,"data":"WARNING ⚠️ 'half' is deprecated and will be removed in the future. Use 'quantize' instead.\n"}
+,{"stream_name":"stdout","time":639.519515407,"data":"WARNING ⚠️ 'half' is deprecated and will be removed in the future. Use 'quantize' instead.\n"}
+,{"stream_name":"stdout","time":648.79839735,"data":"WARNING ⚠️ 'half' is deprecated and will be removed in the future. Use 'quantize' instead.\n"}
+,{"stream_name":"stdout","time":658.12232694,"data":"WARNING ⚠️ 'half' is deprecated and will be removed in the future. Use 'quantize' instead.\n"}
+,{"stream_name":"stdout","time":667.332695463,"data":"WARNING ⚠️ 'half' is deprecated and will be removed in the future. Use 'quantize' instead.\n"}
+,{"stream_name":"stdout","time":676.554304497,"data":"WARNING ⚠️ 'half' is deprecated and will be removed in the future. Use 'quantize' instead.\n"}
+,{"stream_name":"stdout","time":685.762442242,"data":"WARNING ⚠️ 'half' is deprecated and will be removed in the future. Use 'quantize' instead.\n"}
+,{"stream_name":"stdout","time":694.915670895,"data":"WARNING ⚠️ 'half' is deprecated and will be removed in the future. Use 'quantize' instead.\n"}
+,{"stream_name":"stdout","time":704.110526531,"data":"WARNING ⚠️ 'half' is deprecated and will be removed in the future. Use 'quantize' instead.\n"}
+,{"stream_name":"stdout","time":713.315663461,"data":"WARNING ⚠️ 'half' is deprecated and will be removed in the future. Use 'quantize' instead.\n"}
+,{"stream_name":"stdout","time":722.524720198,"data":"WARNING ⚠️ 'half' is deprecated and will be removed in the future. Use 'quantize' instead.\n"}
+,{"stream_name":"stdout","time":731.666204684,"data":"WARNING ⚠️ 'half' is deprecated and will be removed in the future. Use 'quantize' instead.\n"}
+,{"stream_name":"stdout","time":740.753928651,"data":"WARNING ⚠️ 'half' is deprecated and will be removed in the future. Use 'quantize' instead.\n"}
+,{"stream_name":"stdout","time":749.927263219,"data":"WARNING ⚠️ 'half' is deprecated and will be removed in the future. Use 'quantize' instead.\n"}
+,{"stream_name":"stdout","time":759.125077326,"data":"WARNING ⚠️ 'half' is deprecated and will be removed in the future. Use 'quantize' instead.\n"}
+,{"stream_name":"stdout","time":768.295892802,"data":"WARNING ⚠️ 'half' is deprecated and will be removed in the future. Use 'quantize' instead.\n"}
+,{"stream_name":"stdout","time":775.227621157,"data":"E0a gain_test: 2246 boxes, 754s\n"}
+,{"stream_name":"stdout","time":781.27350438,"data":"WARNING ⚠️ 'half' is deprecated and will be removed in the future. Use 'quantize' instead.\n"}
+,{"stream_name":"stdout","time":790.61747064,"data":"WARNING ⚠️ 'half' is deprecated and will be removed in the future. Use 'quantize' instead.\n"}
+,{"stream_name":"stdout","time":799.939329659,"data":"WARNING ⚠️ 'half' is deprecated and will be removed in the future. Use 'quantize' instead.\n"}
+,{"stream_name":"stdout","time":809.319685032,"data":"WARNING ⚠️ 'half' is deprecated and will be removed in the future. Use 'quantize' instead.\n"}
+,{"stream_name":"stdout","time":818.618293022,"data":"WARNING ⚠️ 'half' is deprecated and will be removed in the future. Use 'quantize' instead.\n"}
+,{"stream_name":"stdout","time":827.744599096,"data":"WARNING ⚠️ 'half' is deprecated and will be removed in the future. Use 'quantize' instead.\n"}
+,{"stream_name":"stdout","time":837.05799595,"data":"WARNING ⚠️ 'half' is deprecated and will be removed in the future. Use 'quantize' instead.\n"}
+,{"stream_name":"stdout","time":846.294114628,"data":"WARNING ⚠️ 'half' is deprecated and will be removed in the future. Use 'quantize' instead.\n"}
+,{"stream_name":"stdout","time":855.446727261,"data":"WARNING ⚠️ 'half' is deprecated and will be removed in the future. Use 'quantize' instead.\n"}
+,{"stream_name":"stdout","time":864.679659869,"data":"WARNING ⚠️ 'half' is deprecated and will be removed in the future. Use 'quantize' instead.\n"}
+,{"stream_name":"stdout","time":873.884658819,"data":"WARNING ⚠️ 'half' is deprecated and will be removed in the future. Use 'quantize' instead.\n"}
+,{"stream_name":"stdout","time":883.186532297,"data":"WARNING ⚠️ 'half' is deprecated and will be removed in the future. Use 'quantize' instead.\n"}
+,{"stream_name":"stdout","time":892.385825813,"data":"WARNING ⚠️ 'half' is deprecated and will be removed in the future. Use 'quantize' instead.\n"}
+,{"stream_name":"stdout","time":901.683414766,"data":"WARNING ⚠️ 'half' is deprecated and will be removed in the future. Use 'quantize' instead.\n"}
+,{"stream_name":"stdout","time":910.981267879,"data":"WARNING ⚠️ 'half' is deprecated and will be removed in the future. Use 'quantize' instead.\n"}
+,{"stream_name":"stdout","time":920.193172174,"data":"WARNING ⚠️ 'half' is deprecated and will be removed in the future. Use 'quantize' instead.\n"}
+,{"stream_name":"stdout","time":929.343663356,"data":"WARNING ⚠️ 'half' is deprecated and will be removed in the future. Use 'quantize' instead.\n"}
+,{"stream_name":"stdout","time":938.599493394,"data":"WARNING ⚠️ 'half' is deprecated and will be removed in the future. Use 'quantize' instead.\n"}
+,{"stream_name":"stdout","time":947.735247215,"data":"WARNING ⚠️ 'half' is deprecated and will be removed in the future. Use 'quantize' instead.\n"}
+,{"stream_name":"stdout","time":954.560825039,"data":"E0a gain_ranking: 2263 boxes, 934s\n"}
+,{"stream_name":"stdout","time":962.359491476,"data":"WARNING ⚠️ 'half' is deprecated and will be removed in the future. Use 'quantize' instead.\n"}
+,{"stream_name":"stdout","time":971.757774939,"data":"WARNING ⚠️ 'half' is deprecated and will be removed in the future. Use 'quantize' instead.\n"}
+,{"stream_name":"stdout","time":981.07506741,"data":"WARNING ⚠️ 'half' is deprecated and will be removed in the future. Use 'quantize' instead.\n"}
+,{"stream_name":"stdout","time":990.287436115,"data":"WARNING ⚠️ 'half' is deprecated and will be removed in the future. Use 'quantize' instead.\n"}
+,{"stream_name":"stdout","time":999.49784306,"data":"WARNING ⚠️ 'half' is deprecated and will be removed in the future. Use 'quantize' instead.\n"}
+,{"stream_name":"stdout","time":1008.649818021,"data":"WARNING ⚠️ 'half' is deprecated and will be removed in the future. Use 'quantize' instead.\n"}
+,{"stream_name":"stdout","time":1017.961650132,"data":"WARNING ⚠️ 'half' is deprecated and will be removed in the future. Use 'quantize' instead.\n"}
+,{"stream_name":"stdout","time":1027.245961733,"data":"WARNING ⚠️ 'half' is deprecated and will be removed in the future. Use 'quantize' instead.\n"}
+,{"stream_name":"stdout","time":1036.523373667,"data":"WARNING ⚠️ 'half' is deprecated and will be removed in the future. Use 'quantize' instead.\n"}
+,{"stream_name":"stdout","time":1045.683067575,"data":"WARNING ⚠️ 'half' is deprecated and will be removed in the future. Use 'quantize' instead.\n"}
+,{"stream_name":"stdout","time":1054.795617694,"data":"WARNING ⚠️ 'half' is deprecated and will be removed in the future. Use 'quantize' instead.\n"}
+,{"stream_name":"stdout","time":1063.923676781,"data":"WARNING ⚠️ 'half' is deprecated and will be removed in the future. Use 'quantize' instead.\n"}
+,{"stream_name":"stdout","time":1073.138163635,"data":"WARNING ⚠️ 'half' is deprecated and will be removed in the future. Use 'quantize' instead.\n"}
+,{"stream_name":"stdout","time":1082.339598537,"data":"WARNING ⚠️ 'half' is deprecated and will be removed in the future. Use 'quantize' instead.\n"}
+,{"stream_name":"stdout","time":1091.488931652,"data":"WARNING ⚠️ 'half' is deprecated and will be removed in the future. Use 'quantize' instead.\n"}
+,{"stream_name":"stdout","time":1100.689480034,"data":"WARNING ⚠️ 'half' is deprecated and will be removed in the future. Use 'quantize' instead.\n"}
+,{"stream_name":"stdout","time":1109.849742432,"data":"WARNING ⚠️ 'half' is deprecated and will be removed in the future. Use 'quantize' instead.\n"}
+,{"stream_name":"stdout","time":1118.999105217,"data":"WARNING ⚠️ 'half' is deprecated and will be removed in the future. Use 'quantize' instead.\n"}
+,{"stream_name":"stdout","time":1128.134167581,"data":"WARNING ⚠️ 'half' is deprecated and will be removed in the future. Use 'quantize' instead.\n"}
+,{"stream_name":"stdout","time":1135.036633171,"data":"E0b plain: 2010 boxes, 1114s\n"}
+,{"stream_name":"stdout","time":1135.037661131,"data":"WARNING ⚠️ 'half' is deprecated and will be removed in the future. Use 'quantize' instead.\n"}
+,{"stream_name":"stdout","time":1144.320690853,"data":"WARNING ⚠️ 'half' is deprecated and will be removed in the future. Use 'quantize' instead.\n"}
+,{"stream_name":"stdout","time":1153.483541415,"data":"WARNING ⚠️ 'half' is deprecated and will be removed in the future. Use 'quantize' instead.\n"}
+,{"stream_name":"stdout","time":1162.65632155,"data":"WARNING ⚠️ 'half' is deprecated and will be removed in the future. Use 'quantize' instead.\n"}
+,{"stream_name":"stdout","time":1171.776183507,"data":"WARNING ⚠️ 'half' is deprecated and will be removed in the future. Use 'quantize' instead.\n"}
+,{"stream_name":"stdout","time":1181.052862379,"data":"WARNING ⚠️ 'half' is deprecated and will be removed in the future. Use 'quantize' instead.\n"}
+,{"stream_name":"stdout","time":1190.346904201,"data":"WARNING ⚠️ 'half' is deprecated and will be removed in the future. Use 'quantize' instead.\n"}
+,{"stream_name":"stdout","time":1199.603711376,"data":"WARNING ⚠️ 'half' is deprecated and will be removed in the future. Use 'quantize' instead.\n"}
+,{"stream_name":"stdout","time":1208.922690112,"data":"WARNING ⚠️ 'half' is deprecated and will be removed in the future. Use 'quantize' instead.\n"}
+,{"stream_name":"stdout","time":1218.097674922,"data":"WARNING ⚠️ 'half' is deprecated and will be removed in the future. Use 'quantize' instead.\n"}
+,{"stream_name":"stdout","time":1227.33372527,"data":"WARNING ⚠️ 'half' is deprecated and will be removed in the future. Use 'quantize' instead.\n"}
+,{"stream_name":"stdout","time":1236.569746057,"data":"WARNING ⚠️ 'half' is deprecated and will be removed in the future. Use 'quantize' instead.\n"}
+,{"stream_name":"stdout","time":1245.838119636,"data":"WARNING ⚠️ 'half' is deprecated and will be removed in the future. Use 'quantize' instead.\n"}
+,{"stream_name":"stdout","time":1254.958136923,"data":"WARNING ⚠️ 'half' is deprecated and will be removed in the future. Use 'quantize' instead.\n"}
+,{"stream_name":"stdout","time":1264.085733425,"data":"WARNING ⚠️ 'half' is deprecated and will be removed in the future. Use 'quantize' instead.\n"}
+,{"stream_name":"stdout","time":1273.278651079,"data":"WARNING ⚠️ 'half' is deprecated and will be removed in the future. Use 'quantize' instead.\n"}
+,{"stream_name":"stdout","time":1282.431443025,"data":"WARNING ⚠️ 'half' is deprecated and will be removed in the future. Use 'quantize' instead.\n"}
+,{"stream_name":"stdout","time":1291.549311259,"data":"WARNING ⚠️ 'half' is deprecated and will be removed in the future. Use 'quantize' instead.\n"}
+,{"stream_name":"stdout","time":1300.677314141,"data":"WARNING ⚠️ 'half' is deprecated and will be removed in the future. Use 'quantize' instead.\n"}
+,{"stream_name":"stdout","time":1307.675777088,"data":"WARNING ⚠️ 'half' is deprecated and will be removed in the future. Use 'quantize' instead.\n"}
+,{"stream_name":"stdout","time":1316.871931771,"data":"WARNING ⚠️ 'half' is deprecated and will be removed in the future. Use 'quantize' instead.\n"}
+,{"stream_name":"stdout","time":1326.142766365,"data":"WARNING ⚠️ 'half' is deprecated and will be removed in the future. Use 'quantize' instead.\n"}
+,{"stream_name":"stdout","time":1335.373289505,"data":"WARNING ⚠️ 'half' is deprecated and will be removed in the future. Use 'quantize' instead.\n"}
+,{"stream_name":"stdout","time":1344.536952161,"data":"WARNING ⚠️ 'half' is deprecated and will be removed in the future. Use 'quantize' instead.\n"}
+,{"stream_name":"stdout","time":1353.666999401,"data":"WARNING ⚠️ 'half' is deprecated and will be removed in the future. Use 'quantize' instead.\n"}
+,{"stream_name":"stdout","time":1362.82477786,"data":"WARNING ⚠️ 'half' is deprecated and will be removed in the future. Use 'quantize' instead.\n"}
+,{"stream_name":"stdout","time":1371.986811128,"data":"WARNING ⚠️ 'half' is deprecated and will be removed in the future. Use 'quantize' instead.\n"}
+,{"stream_name":"stdout","time":1381.276822473,"data":"WARNING ⚠️ 'half' is deprecated and will be removed in the future. Use 'quantize' instead.\n"}
+,{"stream_name":"stdout","time":1390.542194279,"data":"WARNING ⚠️ 'half' is deprecated and will be removed in the future. Use 'quantize' instead.\n"}
+,{"stream_name":"stdout","time":1399.801360727,"data":"WARNING ⚠️ 'half' is deprecated and will be removed in the future. Use 'quantize' instead.\n"}
+,{"stream_name":"stdout","time":1409.085893976,"data":"WARNING ⚠️ 'half' is deprecated and will be removed in the future. Use 'quantize' instead.\n"}
+,{"stream_name":"stdout","time":1418.258365802,"data":"WARNING ⚠️ 'half' is deprecated and will be removed in the future. Use 'quantize' instead.\n"}
+,{"stream_name":"stdout","time":1427.444251071,"data":"WARNING ⚠️ 'half' is deprecated and will be removed in the future. Use 'quantize' instead.\n"}
+,{"stream_name":"stdout","time":1436.703816377,"data":"WARNING ⚠️ 'half' is deprecated and will be removed in the future. Use 'quantize' instead.\n"}
+,{"stream_name":"stdout","time":1446.099760807,"data":"WARNING ⚠️ 'half' is deprecated and will be removed in the future. Use 'quantize' instead.\n"}
+,{"stream_name":"stdout","time":1455.660266573,"data":"WARNING ⚠️ 'half' is deprecated and will be removed in the future. Use 'quantize' instead.\n"}
+,{"stream_name":"stdout","time":1465.011226558,"data":"WARNING ⚠️ 'half' is deprecated and will be removed in the future. Use 'quantize' instead.\n"}
+,{"stream_name":"stdout","time":1474.398627342,"data":"WARNING ⚠️ 'half' is deprecated and will be removed in the future. Use 'quantize' instead.\n"}
+,{"stream_name":"stderr","time":1481.623131463,"data":"/usr/local/lib/python3.12/dist-packages/ensemble_boxes/ensemble_boxes_wbf.py:66: UserWarning: Zero area box skipped: [0.282505792034559, 0.0, 0.7448020493688662, 0.0].\n"}
+,{"stream_name":"stderr","time":1481.623211933,"data":"  warnings.warn(\"Zero area box skipped: {}.\".format(box_part))\n"}
+,{"stream_name":"stderr","time":1481.623218453,"data":"/usr/local/lib/python3.12/dist-packages/ensemble_boxes/ensemble_boxes_wbf.py:66: UserWarning: Zero area box skipped: [0.5097816404232309, 1.0, 0.7080158832644629, 1.0].\n"}
+,{"stream_name":"stderr","time":1481.623224623,"data":"  warnings.warn(\"Zero area box skipped: {}.\".format(box_part))\n"}
+,{"stream_name":"stderr","time":1481.685294388,"data":"/usr/local/lib/python3.12/dist-packages/ensemble_boxes/ensemble_boxes_wbf.py:66: UserWarning: Zero area box skipped: [0.7098303096810566, 0.0, 0.7966525048324742, 0.0].\n"}
+,{"stream_name":"stderr","time":1481.685325358,"data":"  warnings.warn(\"Zero area box skipped: {}.\".format(box_part))\n"}
+,{"stream_name":"stderr","time":1481.690098315,"data":"/usr/local/lib/python3.12/dist-packages/ensemble_boxes/ensemble_boxes_wbf.py:66: UserWarning: Zero area box skipped: [0.7978903452555338, 1.0, 0.9459182739257812, 1.0].\n"}
+,{"stream_name":"stderr","time":1481.690138055,"data":"  warnings.warn(\"Zero area box skipped: {}.\".format(box_part))\n"}
+,{"stream_name":"stderr","time":1481.705225547,"data":"/usr/local/lib/python3.12/dist-packages/ensemble_boxes/ensemble_boxes_wbf.py:66: UserWarning: Zero area box skipped: [0.20317755630335857, 0.0, 0.2890284587427513, 0.0].\n"}
+,{"stream_name":"stderr","time":1481.705268427,"data":"  warnings.warn(\"Zero area box skipped: {}.\".format(box_part))\n"}
+,{"stream_name":"stderr","time":1481.732202371,"data":"/usr/local/lib/python3.12/dist-packages/ensemble_boxes/ensemble_boxes_wbf.py:66: UserWarning: Zero area box skipped: [0.2893690376204361, 0.0, 0.7322150611490555, 0.0].\n"}
+,{"stream_name":"stderr","time":1481.732249081,"data":"  warnings.warn(\"Zero area box skipped: {}.\".format(box_part))\n"}
+,{"stream_name":"stderr","time":1481.742472966,"data":"/usr/local/lib/python3.12/dist-packages/ensemble_boxes/ensemble_boxes_wbf.py:66: UserWarning: Zero area box skipped: [0.23174411239778778, 0.0, 0.7531551956888628, 0.0].\n"}
+,{"stream_name":"stderr","time":1481.742509385,"data":"  warnings.warn(\"Zero area box skipped: {}.\".format(box_part))\n"}
+,{"stream_name":"stderr","time":1481.742513365,"data":"/usr/local/lib/python3.12/dist-packages/ensemble_boxes/ensemble_boxes_wbf.py:66: UserWarning: Zero area box skipped: [0.266356431446501, 0.0, 0.7469145057167533, 0.0].\n"}
+,{"stream_name":"stderr","time":1481.742515865,"data":"  warnings.warn(\"Zero area box skipped: {}.\".format(box_part))\n"}
+,{"stream_name":"stderr","time":1481.742518145,"data":"/usr/local/lib/python3.12/dist-packages/ensemble_boxes/ensemble_boxes_wbf.py:66: UserWarning: Zero area box skipped: [0.001797318216753296, 1.0, 0.1955857344621577, 1.0].\n"}
+,{"stream_name":"stderr","time":1481.742520596,"data":"  warnings.warn(\"Zero area box skipped: {}.\".format(box_part))\n"}
+,{"stream_name":"stderr","time":1481.763477454,"data":"/usr/local/lib/python3.12/dist-packages/ensemble_boxes/ensemble_boxes_wbf.py:66: UserWarning: Zero area box skipped: [0.2738716956412438, 0.0, 0.7345094586362934, 0.0].\n"}
+,{"stream_name":"stderr","time":1481.763517544,"data":"  warnings.warn(\"Zero area box skipped: {}.\".format(box_part))\n"}
+,{"stream_name":"stderr","time":1481.763522504,"data":"/usr/local/lib/python3.12/dist-packages/ensemble_boxes/ensemble_boxes_wbf.py:66: UserWarning: Zero area box skipped: [0.26003170202274134, 0.0, 0.7506651019105817, 0.0].\n"}
+,{"stream_name":"stderr","time":1481.763526464,"data":"  warnings.warn(\"Zero area box skipped: {}.\".format(box_part))\n"}
+,{"stream_name":"stderr","time":1481.794657856,"data":"/usr/local/lib/python3.12/dist-packages/ensemble_boxes/ensemble_boxes_wbf.py:66: UserWarning: Zero area box skipped: [0.18956642399123846, 0.0, 0.2987350827959768, 0.0].\n"}
+,{"stream_name":"stderr","time":1481.794696196,"data":"  warnings.warn(\"Zero area box skipped: {}.\".format(box_part))\n"}
+,{"stream_name":"stderr","time":1481.794700356,"data":"/usr/local/lib/python3.12/dist-packages/ensemble_boxes/ensemble_boxes_wbf.py:66: UserWarning: Zero area box skipped: [0.2682083858067974, 0.0, 0.7405273702294604, 0.0].\n"}
+,{"stream_name":"stderr","time":1481.794702786,"data":"  warnings.warn(\"Zero area box skipped: {}.\".format(box_part))\n"}
+,{"stream_name":"stderr","time":1481.794718956,"data":"/usr/local/lib/python3.12/dist-packages/ensemble_boxes/ensemble_boxes_wbf.py:66: UserWarning: Zero area box skipped: [0.26023212689381103, 0.0, 0.7359601266989222, 0.0].\n"}
+,{"stream_name":"stderr","time":1481.794721216,"data":"  warnings.warn(\"Zero area box skipped: {}.\".format(box_part))\n"}
+,{"stream_name":"stderr","time":1481.794723176,"data":"/usr/local/lib/python3.12/dist-packages/ensemble_boxes/ensemble_boxes_wbf.py:66: UserWarning: Zero area box skipped: [0.7048701288384626, 0.0, 0.809779500237256, 0.0].\n"}
+,{"stream_name":"stderr","time":1481.794725266,"data":"  warnings.warn(\"Zero area box skipped: {}.\".format(box_part))\n"}
+,{"stream_name":"stdout","time":1481.94672933,"data":"E0b tta: 2504 boxes, 1461s\n"}
+,{"stream_name":"stdout","time":1481.947851859,"data":"WARNING ⚠️ 'half' is deprecated and will be removed in the future. Use 'quantize' instead.\n"}
+,{"stream_name":"stdout","time":1491.363938207,"data":"WARNING ⚠️ 'half' is deprecated and will be removed in the future. Use 'quantize' instead.\n"}
+,{"stream_name":"stdout","time":1500.675285834,"data":"WARNING ⚠️ 'half' is deprecated and will be removed in the future. Use 'quantize' instead.\n"}
+,{"stream_name":"stdout","time":1510.18432301,"data":"WARNING ⚠️ 'half' is deprecated and will be removed in the future. Use 'quantize' instead.\n"}
+,{"stream_name":"stdout","time":1519.433980802,"data":"WARNING ⚠️ 'half' is deprecated and will be removed in the future. Use 'quantize' instead.\n"}
+,{"stream_name":"stdout","time":1528.888792248,"data":"WARNING ⚠️ 'half' is deprecated and will be removed in the future. Use 'quantize' instead.\n"}
+,{"stream_name":"stdout","time":1538.286418251,"data":"WARNING ⚠️ 'half' is deprecated and will be removed in the future. Use 'quantize' instead.\n"}
+,{"stream_name":"stdout","time":1547.871880964,"data":"WARNING ⚠️ 'half' is deprecated and will be removed in the future. Use 'quantize' instead.\n"}
+,{"stream_name":"stdout","time":1557.695681165,"data":"WARNING ⚠️ 'half' is deprecated and will be removed in the future. Use 'quantize' instead.\n"}
+,{"stream_name":"stdout","time":1567.213097846,"data":"WARNING ⚠️ 'half' is deprecated and will be removed in the future. Use 'quantize' instead.\n"}
+,{"stream_name":"stdout","time":1576.565617189,"data":"WARNING ⚠️ 'half' is deprecated and will be removed in the future. Use 'quantize' instead.\n"}
+,{"stream_name":"stdout","time":1585.820736657,"data":"WARNING ⚠️ 'half' is deprecated and will be removed in the future. Use 'quantize' instead.\n"}
+,{"stream_name":"stdout","time":1595.024091496,"data":"WARNING ⚠️ 'half' is deprecated and will be removed in the future. Use 'quantize' instead.\n"}
+,{"stream_name":"stdout","time":1604.308949446,"data":"WARNING ⚠️ 'half' is deprecated and will be removed in the future. Use 'quantize' instead.\n"}
+,{"stream_name":"stdout","time":1613.596879464,"data":"WARNING ⚠️ 'half' is deprecated and will be removed in the future. Use 'quantize' instead.\n"}
+,{"stream_name":"stdout","time":1623.084248891,"data":"WARNING ⚠️ 'half' is deprecated and will be removed in the future. Use 'quantize' instead.\n"}
+,{"stream_name":"stdout","time":1632.349154331,"data":"WARNING ⚠️ 'half' is deprecated and will be removed in the future. Use 'quantize' instead.\n"}
+,{"stream_name":"stdout","time":1641.749527455,"data":"WARNING ⚠️ 'half' is deprecated and will be removed in the future. Use 'quantize' instead.\n"}
+,{"stream_name":"stdout","time":1651.052265315,"data":"WARNING ⚠️ 'half' is deprecated and will be removed in the future. Use 'quantize' instead.\n"}
+,{"stream_name":"stdout","time":1658.096592921,"data":"E0b gain_test: 2042 boxes, 1637s\n"}
+,{"stream_name":"stdout","time":1658.097770141,"data":"WARNING ⚠️ 'half' is deprecated and will be removed in the future. Use 'quantize' instead.\n"}
+,{"stream_name":"stdout","time":1667.415576032,"data":"WARNING ⚠️ 'half' is deprecated and will be removed in the future. Use 'quantize' instead.\n"}
+,{"stream_name":"stdout","time":1676.826586201,"data":"WARNING ⚠️ 'half' is deprecated and will be removed in the future. Use 'quantize' instead.\n"}
+,{"stream_name":"stdout","time":1686.318082465,"data":"WARNING ⚠️ 'half' is deprecated and will be removed in the future. Use 'quantize' instead.\n"}
+,{"stream_name":"stdout","time":1695.882965049,"data":"WARNING ⚠️ 'half' is deprecated and will be removed in the future. Use 'quantize' instead.\n"}
+,{"stream_name":"stdout","time":1705.299333095,"data":"WARNING ⚠️ 'half' is deprecated and will be removed in the future. Use 'quantize' instead.\n"}
+,{"stream_name":"stdout","time":1714.967028163,"data":"WARNING ⚠️ 'half' is deprecated and will be removed in the future. Use 'quantize' instead.\n"}
+,{"stream_name":"stdout","time":1724.374002614,"data":"WARNING ⚠️ 'half' is deprecated and will be removed in the future. Use 'quantize' instead.\n"}
+,{"stream_name":"stdout","time":1733.683207629,"data":"WARNING ⚠️ 'half' is deprecated and will be removed in the future. Use 'quantize' instead.\n"}
+,{"stream_name":"stdout","time":1743.285978123,"data":"WARNING ⚠️ 'half' is deprecated and will be removed in the future. Use 'quantize' instead.\n"}
+,{"stream_name":"stdout","time":1752.703721748,"data":"WARNING ⚠️ 'half' is deprecated and will be removed in the future. Use 'quantize' instead.\n"}
+,{"stream_name":"stdout","time":1762.175053184,"data":"WARNING ⚠️ 'half' is deprecated and will be removed in the future. Use 'quantize' instead.\n"}
+,{"stream_name":"stdout","time":1771.562512856,"data":"WARNING ⚠️ 'half' is deprecated and will be removed in the future. Use 'quantize' instead.\n"}
+,{"stream_name":"stdout","time":1781.150225537,"data":"WARNING ⚠️ 'half' is deprecated and will be removed in the future. Use 'quantize' instead.\n"}
+,{"stream_name":"stdout","time":1790.475083995,"data":"WARNING ⚠️ 'half' is deprecated and will be removed in the future. Use 'quantize' instead.\n"}
+,{"stream_name":"stdout","time":1799.863489209,"data":"WARNING ⚠️ 'half' is deprecated and will be removed in the future. Use 'quantize' instead.\n"}
+,{"stream_name":"stdout","time":1809.359106927,"data":"WARNING ⚠️ 'half' is deprecated and will be removed in the future. Use 'quantize' instead.\n"}
+,{"stream_name":"stdout","time":1818.893284342,"data":"WARNING ⚠️ 'half' is deprecated and will be removed in the future. Use 'quantize' instead.\n"}
+,{"stream_name":"stdout","time":1828.303872809,"data":"WARNING ⚠️ 'half' is deprecated and will be removed in the future. Use 'quantize' instead.\n"}
+,{"stream_name":"stdout","time":1835.259927739,"data":"E0b gain_ranking: 2030 boxes, 1814s\n"}
+,{"stream_name":"stdout","time":1835.317906959,"data":"DONE\n"}
+,{"stream_name":"stderr","time":1839.259531961,"data":"/usr/local/lib/python3.12/dist-packages/mistune.py:435: SyntaxWarning: invalid escape sequence '\\|'\n"}
+,{"stream_name":"stderr","time":1839.259592521,"data":"  cells[i][c] = re.sub('\\\\\\\\\\|', '|', cell)\n"}
+,{"stream_name":"stderr","time":1839.717631795,"data":"/usr/local/lib/python3.12/dist-packages/nbconvert/filters/filter_links.py:36: SyntaxWarning: invalid escape sequence '\\_'\n"}
+,{"stream_name":"stderr","time":1839.717660565,"data":"  text = re.sub(r'_', '\\_', text) # Escape underscores in display text\n"}
+,{"stream_name":"stderr","time":1840.505652798,"data":"[NbConvertApp] Converting notebook __script__.ipynb to html\n"}
+,{"stream_name":"stderr","time":1842.348331012,"data":"[NbConvertApp] Writing 323802 bytes to __results__.html\n"}
+]

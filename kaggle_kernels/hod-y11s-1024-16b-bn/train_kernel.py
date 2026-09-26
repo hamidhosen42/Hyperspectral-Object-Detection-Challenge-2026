@@ -10,9 +10,9 @@ IMGSZ = 1024
 EPOCHS = 50
 BATCH = 16
 BANDS = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15]
-EXTRA = {}
+EXTRA = {'cache': 'disk'}
 FULL_DATA = False
-STEM_INIT = 'mean'
+STEM_INIT = 'rgb3'
 NORM = 'band'
 # ----------------
 

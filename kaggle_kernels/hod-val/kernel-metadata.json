@@ -1,0 +1,20 @@
+{
+ "id": "hosen42/hod-val",
+ "title": "hod-val",
+ "code_file": "val_kernel.py",
+ "language": "python",
+ "kernel_type": "script",
+ "is_private": true,
+ "enable_gpu": false,
+ "enable_tpu": false,
+ "enable_internet": true,
+ "dataset_sources": [
+  "moderantnoukoussi/hyperspectral-object-detection-challenge-2026",
+  "hosen42/hod-weights"
+ ],
+ "kernel_sources": [
+  "hosen42/hod-y26s-1024"
+ ],
+ "model_sources": [],
+ "competition_sources": []
+}

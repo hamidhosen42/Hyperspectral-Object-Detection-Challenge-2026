@@ -1,0 +1,181 @@
+{
+ "name": "E0a-ep9 (test 0.53473)",
+ "pred": "val_pred_ep9.csv",
+ "ALL": {
+  "mAP50-95": 0.6379,
+  "AP50": 0.9199,
+  "AP75": 0.7668,
+  "APs": 0.6241,
+  "APm": 0.6561,
+  "APl": 0.4945,
+  "per_class": {
+   "apple": 0.7338,
+   "apple_plastic": 0.7518,
+   "badminton": 0.7375,
+   "banana": 0.7083,
+   "banana_plastic": 0.7303,
+   "car": 0.453,
+   "car_toy": 0.6437,
+   "charger_head": 0.677,
+   "e-bike": 0.3344,
+   "egg": 0.7367,
+   "egg_plastic": 0.7982,
+   "egg_wood": 0.6897,
+   "orange": 0.8195,
+   "orange_plastic": 0.738,
+   "people": 0.2753,
+   "rubik": 0.6907,
+   "stone_block": 0.2606,
+   "table_tennis": 0.7041
+  },
+  "pair_AP": {
+   "apple": 0.7428,
+   "banana": 0.7193,
+   "orange": 0.7788,
+   "egg": 0.7415,
+   "car": 0.5484
+  }
+ },
+ "STRESS": {
+  "mAP50-95": 0.651,
+  "AP50": 0.9118,
+  "AP75": 0.7749,
+  "APs": 0.5581,
+  "APm": 0.6781,
+  "APl": 0.5444,
+  "per_class": {
+   "apple": null,
+   "apple_plastic": 0.8,
+   "badminton": 0.7621,
+   "banana": 0.8515,
+   "banana_plastic": 0.9,
+   "car": 0.5711,
+   "car_toy": 0.5485,
+   "charger_head": 0.6653,
+   "e-bike": 0.2998,
+   "egg": 0.8227,
+   "egg_plastic": 0.8088,
+   "egg_wood": 0.8252,
+   "orange": null,
+   "orange_plastic": 0.7,
+   "people": 0.2051,
+   "rubik": 0.7212,
+   "stone_block": 0.2679,
+   "table_tennis": 0.6662
+  },
+  "pair_AP": {
+   "apple": 0.8,
+   "banana": 0.8758,
+   "orange": 0.7,
+   "egg": 0.8189,
+   "car": 0.5598
+  }
+ },
+ "pair_confusion_ALL": {
+  "apple": {
+   "gt": [
+    "apple",
+    "apple_plastic"
+   ],
+   "rows=gt, cols=pred(+missed)": [
+    [
+     48,
+     0,
+     0
+    ],
+    [
+     0,
+     50,
+     0
+    ]
+   ],
+   "material_acc_on_matched": 1.0
+  },
+  "banana": {
+   "gt": [
+    "banana",
+    "banana_plastic"
+   ],
+   "rows=gt, cols=pred(+missed)": [
+    [
+     60,
+     0,
+     0
+    ],
+    [
+     1,
+     35,
+     0
+    ]
+   ],
+   "material_acc_on_matched": 0.9896
+  },
+  "orange": {
+   "gt": [
+    "orange",
+    "orange_plastic"
+   ],
+   "rows=gt, cols=pred(+missed)": [
+    [
+     20,
+     0,
+     0
+    ],
+    [
+     0,
+     34,
+     0
+    ]
+   ],
+   "material_acc_on_matched": 1.0
+  },
+  "egg": {
+   "gt": [
+    "egg",
+    "egg_plastic",
+    "egg_wood"
+   ],
+   "rows=gt, cols=pred(+missed)": [
+    [
+     41,
+     1,
+     0,
+     0
+    ],
+    [
+     0,
+     56,
+     0,
+     0
+    ],
+    [
+     3,
+     0,
+     14,
+     0
+    ]
+   ],
+   "material_acc_on_matched": 0.9652
+  },
+  "car": {
+   "gt": [
+    "car",
+    "car_toy"
+   ],
+   "rows=gt, cols=pred(+missed)": [
+    [
+     57,
+     0,
+     16
+    ],
+    [
+     0,
+     34,
+     0
+    ]
+   ],
+   "material_acc_on_matched": 1.0
+  }
+ },
+ "n_pred_rows": 6874
+}
