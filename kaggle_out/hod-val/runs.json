@@ -1,0 +1,20 @@
+{
+ "E0a": {
+  "weights": "/kaggle/input/datasets/hosen42/hod-weights/rgb_s1024_ep40.pt",
+  "bands": [
+   5,
+   8,
+   13
+  ],
+  "norm": "global"
+ },
+ "E0b": {
+  "weights": "/kaggle/input/notebooks/hosen42/hod-y26s-1024/best.pt",
+  "bands": [
+   5,
+   8,
+   13
+  ],
+  "norm": "global"
+ }
+}

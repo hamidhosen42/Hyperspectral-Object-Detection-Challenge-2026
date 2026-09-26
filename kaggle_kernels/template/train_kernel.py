@@ -1,7 +1,7 @@
 # Kaggle GPU training kernel for the Hyperspectral Object Detection Challenge 2026.
 # One experiment per kernel; the CONFIG block is rewritten by push_experiment.py.
 # Outputs (in /kaggle/working): best.pt, results.csv, val_pred.csv, val_score.json, submission.csv
-import os, sys, json, glob, random, subprocess, time
+import os, sys, json, glob, random, subprocess, time, shutil
 subprocess.run([sys.executable, '-m', 'pip', 'install', '-q', '-U', 'ultralytics', 'pycocotools'], check=False)
 
 # ---- CONFIG (rewritten per experiment) ----
@@ -13,6 +13,8 @@ BANDS = [5, 8, 13]          # 3 bands -> pseudo-RGB; use list(range(16)) for all
 EXTRA = {}                  # extra YOLO.train kwargs
 FULL_DATA = False           # True: train on train+val (final model), val metrics then meaningless
 NORM = 'global'            # 'global' | 'band' (per-band per-image percentile scaling)
+PSEUDO_FROM = ''           # glob under /kaggle/input of a teacher's TEST-only prediction CSV ('' = no pseudo-labels)
+PSEUDO_CONF = 0.5          # keep teacher boxes with confidence >= this
 STEM_INIT = 'rgb3'         # >3 bands: 'rgb3' = Ultralytics default (RGB filters in channels 0-2, rest random); 'mean' = all channels from mean RGB filter
 # --------------------------------------------
 
@@ -102,7 +104,20 @@ jobs = [(f'{TRAIN_IMG}/{s}.png', s, split_of[s]) for s in stems] + [(f'{TEST_IMG
 jobs += [(f'{RANK_IMG}/{s}.png', s, 'ranking') for s in rank_stems]
 if not FULL_DATA: pass
 else: jobs += [(f'{TRAIN_IMG}/{s}.png', s, 'val') for s in val_stems]  # keep a val dir so trainer can run
-with ProcessPoolExecutor(os.cpu_count()) as ex: list(ex.map(process, jobs, chunksize=32))
+with ProcessPoolExecutor(os.cpu_count()) as ex: shape_of = {(j[1], j[2]): r for j, r in zip(jobs, ex.map(process, jobs, chunksize=32))}
+pseudo = {}
+if PSEUDO_FROM:  # legal self-training on unlabeled TEST images only (organiser ruling 739853); ranking images are never used
+    src_csv = sorted(glob.glob(f'/kaggle/input/{PSEUDO_FROM}', recursive=True))[0]
+    P = pd.read_csv(src_csv); P = P[(P.confidence >= PSEUDO_CONF) & (P.x2 - P.x1 >= 2) & (P.y2 - P.y1 >= 2)]
+    ext = 'png' if NCH == 3 else 'tiff'; n_img = n_box = 0
+    for iid, g in P.groupby('image_id'):
+        s = str(iid)
+        if (s, 'test') not in shape_of: continue  # only images of the test split
+        H, W = shape_of[(s, 'test')]
+        open(f'{DATA}/labels/train/pl_{s}.txt', 'w').write('\n'.join(f"{int(r.class_id)} {(r.x1+r.x2)/2/W:.6f} {(r.y1+r.y2)/2/H:.6f} {(r.x2-r.x1)/W:.6f} {(r.y2-r.y1)/H:.6f}" for r in g.itertuples()))
+        shutil.copy(f'{DATA}/images/test/{s}.{ext}', f'{DATA}/images/train/pl_{s}.{ext}'); n_img += 1; n_box += len(g)
+    pseudo = {'teacher_csv': src_csv, 'conf': PSEUDO_CONF, 'images': n_img, 'boxes': n_box}
+    print('pseudo-labels:', pseudo, flush=True)
 yaml = f"path: {DATA}\ntrain: images/train\nval: images/val\ntest: images/test\nchannels: {NCH}\nnc: {len(CLASSES)}\nnames: {CLASSES}\n"
 open(f'{DATA}/data.yaml', 'w').write(yaml)
 print(f'prep done in {time.time()-t0:.0f}s: train {sum(v=="train" for v in split_of.values())} val {len(val_stems)} test {len(test_stems)}', flush=True)
@@ -126,7 +141,7 @@ print('model init:', MODEL_PATH, flush=True)
 model = (RTDETR if is_detr else YOLO)(MODEL_PATH)
 kw = dict(data=f'{DATA}/data.yaml', imgsz=IMGSZ, epochs=EPOCHS, batch=BATCH, device=0, workers=4, project=WORK, name='run', exist_ok=True,
           hsv_h=0.015 if NCH == 3 else 0.0, hsv_s=0.7 if NCH == 3 else 0.0, hsv_v=0.4, bgr=0.0, fliplr=0.5, mosaic=1.0, close_mosaic=10, scale=0.5,
-          patience=100, plots=False, cache=False, amp=True, seed=0, deterministic=False)
+          patience=100, plots=False, cache='disk' if NCH > 3 else False, amp=True, seed=0, deterministic=False)
 kw.update(EXTRA)
 try:
     import torch
@@ -163,7 +178,7 @@ if not FULL_DATA:
     prec = E.eval['precision']
     score = {'mAP50-95': float(E.stats[0]), 'mAP50': float(E.stats[1]), 'per_class': {n: float(prec[:, :, k, 0, -1][prec[:, :, k, 0, -1] > -1].mean()) for k, n in enumerate(CLASSES)}}
     print('VAL_SCORE', json.dumps(score), flush=True)
-score.update({'model': MODEL, 'imgsz': IMGSZ, 'epochs': EPOCHS, 'batch': BATCH, 'bands': BANDS, 'extra': EXTRA, 'full_data': FULL_DATA, 'stem_init': STEM_INIT, 'norm': NORM})
+score.update({'model': MODEL, 'imgsz': IMGSZ, 'epochs': EPOCHS, 'batch': BATCH, 'bands': BANDS, 'extra': EXTRA, 'full_data': FULL_DATA, 'stem_init': STEM_INIT, 'norm': NORM, 'pseudo': pseudo})
 json.dump(score, open(f'{WORK}/val_score.json', 'w'), indent=1)
 sub = predict_csv(best, 'test', f'{WORK}/submission.csv')
 if rank_stems:  # Phase 2 needs ONE csv with test + ranking predictions (2000 images), same single model
