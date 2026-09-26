@@ -4,15 +4,15 @@
 import os, sys, json, glob, random, subprocess, time
 subprocess.run([sys.executable, '-m', 'pip', 'install', '-q', '-U', 'ultralytics', 'pycocotools'], check=False)
 
-# ---- CONFIG (rewritten per experiment) ----
-MODEL = 'yolo11s.pt'
+# ---- CONFIG ----
+MODEL = 'yolo11m.pt'
 IMGSZ = 1024
 EPOCHS = 50
 BATCH = 16
-BANDS = [5, 8, 13]          # 3 bands -> pseudo-RGB; use list(range(16)) for all bands
-EXTRA = {}                  # extra YOLO.train kwargs
-FULL_DATA = False           # True: train on train+val (final model), val metrics then meaningless
-# --------------------------------------------
+BANDS = [5, 8, 13]
+EXTRA = {}
+FULL_DATA = False
+# ----------------
 
 import numpy as np, cv2, pandas as pd
 import xml.etree.ElementTree as ET
