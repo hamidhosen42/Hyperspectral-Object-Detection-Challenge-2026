@@ -22,10 +22,15 @@ from ultralytics import YOLO, RTDETR
 IN = '/kaggle/input/hyperspectral-object-detection-challenge-2026'
 WORK = '/kaggle/working'; DATA = '/kaggle/working/yolo'
 TRAIN_IMG = f'{IN}/data_train/data_train/VIS'; TRAIN_ANN = f'{IN}/data_train/data_train/Annotations/VIS'; TEST_IMG = f'{IN}/data_test/data_test/VIS'
-for _ in range(60):  # dataset mount can lag on GPU workers
-    if os.path.exists(f'{IN}/class.txt'): break
-    time.sleep(10)
-print('input mounted:', os.path.exists(f'{IN}/class.txt'), os.listdir('/kaggle/input'), flush=True)
+def find_input():
+    for _ in range(60):  # dataset mount can lag; layout may be /kaggle/input/<slug> or /kaggle/input/datasets/<owner>/<slug>
+        for root, dirs, files in os.walk('/kaggle/input'):
+            if 'class.txt' in files and os.path.isdir(os.path.join(root, 'data_train')): return root
+            if root.count('/') > 6: dirs[:] = []
+        time.sleep(10)
+    raise FileNotFoundError('competition data not found under /kaggle/input: ' + str(os.listdir('/kaggle/input')))
+IN = find_input(); print('input dir:', IN, flush=True)
+TRAIN_IMG = f'{IN}/data_train/data_train/VIS'; TRAIN_ANN = f'{IN}/data_train/data_train/Annotations/VIS'; TEST_IMG = f'{IN}/data_test/data_test/VIS'
 CLASSES = [l.strip() for l in open(f'{IN}/class.txt') if l.strip()]; CLS2ID = {c: i for i, c in enumerate(CLASSES)}
 NCH = len(BANDS)
 
