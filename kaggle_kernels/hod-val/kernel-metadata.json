@@ -12,9 +12,7 @@
   "moderantnoukoussi/hyperspectral-object-detection-challenge-2026",
   "hosen42/hod-weights"
  ],
- "kernel_sources": [
-  "hosen42/hod-y26s-1024"
- ],
+ "kernel_sources": [],
  "model_sources": [],
  "competition_sources": []
 }

@@ -63,7 +63,10 @@ def predict(model, files, imgsz, device, flip=False, conf=0.001, iou=0.6, max_de
     rows, sizes = [], {}
     for i in range(0, len(files), 16):
         batch = files[i:i + 16]
-        src = [np.ascontiguousarray(imread(p, cv2.IMREAD_UNCHANGED)[:, ::-1]) for p in batch] if flip else batch
+        if flip or not batch[0].endswith('.png'):  # the predictor's file loader reads multi-page TIFFs as 3-channel: pass arrays
+            src = [imread(p, cv2.IMREAD_UNCHANGED) for p in batch]
+            src = [np.ascontiguousarray(x[:, ::-1]) if flip else x for x in src]
+        else: src = batch
         for p, r in zip(batch, model.predict(src, imgsz=imgsz, conf=conf, iou=iou, max_det=max_det, device=device, verbose=False)):
             iid = int(os.path.splitext(os.path.basename(p))[0]); H, W = r.orig_shape; sizes[iid] = (H, W)
             xyxy = r.boxes.xyxy.cpu().numpy().copy()
