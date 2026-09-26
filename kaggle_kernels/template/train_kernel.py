@@ -2,7 +2,7 @@
 # One experiment per kernel; the CONFIG block is rewritten by push_experiment.py.
 # Outputs (in /kaggle/working): best.pt, results.csv, val_pred.csv, val_score.json, submission.csv
 import os, sys, json, glob, random, subprocess, time, shutil
-subprocess.run([sys.executable, '-m', 'pip', 'install', '-q', '-U', 'ultralytics', 'pycocotools'], check=False)
+subprocess.run([sys.executable, '-m', 'pip', 'install', '-q', 'ultralytics==8.4.155', 'pycocotools'], check=False)
 
 # ---- CONFIG (rewritten per experiment) ----
 MODEL = 'yolo11s.pt'
@@ -158,9 +158,12 @@ def predict_csv(weights, split, out, conf=0.001, iou=0.6, max_det=300):
     m = (RTDETR if is_detr else YOLO)(weights)
     files = sorted(glob.glob(f'{DATA}/images/{split}/*'), key=lambda p: int(os.path.splitext(os.path.basename(p))[0]))
     rows = []
+    from ultralytics.utils.patches import imread
     for i in range(0, len(files), 32):
-        for r in m.predict(files[i:i + 32], imgsz=IMGSZ, conf=conf, iou=iou, max_det=max_det, device=0, verbose=False, half=True):
-            iid = int(os.path.splitext(os.path.basename(r.path))[0]); b = r.boxes
+        batch = files[i:i + 32]  # predictor's file loader reads multi-page TIFFs as 3-channel: pass arrays for >3 bands
+        src = batch if NCH == 3 else [imread(p, cv2.IMREAD_UNCHANGED) for p in batch]
+        for p, r in zip(batch, m.predict(src, imgsz=IMGSZ, conf=conf, iou=iou, max_det=max_det, device=0, verbose=False, half=True)):
+            iid = int(os.path.splitext(os.path.basename(p))[0]); b = r.boxes
             for (x1, y1, x2, y2), c, s in zip(b.xyxy.cpu().numpy(), b.cls.cpu().numpy(), b.conf.cpu().numpy()):
                 rows.append((iid, int(c), float(s), float(x1), float(y1), float(x2), float(y2)))
     df = pd.DataFrame(rows, columns=['image_id', 'class_id', 'confidence', 'x1', 'y1', 'x2', 'y2']).sort_values(['image_id', 'confidence'], ascending=[True, False]).reset_index(drop=True)

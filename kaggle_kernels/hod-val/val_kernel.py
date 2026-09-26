@@ -12,10 +12,10 @@ subprocess.run([sys.executable, '-m', 'pip', 'install', '-q', 'ultralytics==8.4.
 
 # ---- CONFIG ----
 MODELS = [  # tag, weights glob under /kaggle/input, bands, normalisation
-    {'tag': 'E0a', 'weights': '**/rgb_s1024_ep40.pt', 'bands': [5, 8, 13], 'norm': 'global'},
-    {'tag': 'E0b', 'weights': '**/hod-y26s-1024/best.pt', 'bands': [5, 8, 13], 'norm': 'global'},
+    {'tag': 'E4a', 'weights': '**/e4a_y11s_16b_best.pt', 'bands': list(range(16)), 'norm': 'global'},
 ]
-CONDITIONS = ['plain', 'tta', 'gain_test', 'gain_ranking']
+CONDITIONS = ['plain', 'tta', 'gain_ranking']
+PREDICT_TEST = True        # also write preds/<tag>_test.csv (plain) for the Phase 2 test half
 GAINS = {'test': [1.0223, 1.0401, 1.0451, 1.0365, 1.0036, 1.0206, 1.0097, 0.9966, 0.9939, 0.996, 0.9979, 0.9963, 0.9875, 0.9919, 1.0008, 0.9964],
          'ranking': [1.0711, 1.126, 1.1204, 1.111, 1.0148, 1.0703, 1.032, 1.0098, 0.9999, 0.9892, 0.9524, 0.9461, 0.9474, 0.9629, 0.9666, 0.9684]}
 IMGSZ = 1024
@@ -69,7 +69,10 @@ def predict(model, files, flip=False):
     rows, sizes = [], {}
     for i in range(0, len(files), 16):
         batch = files[i:i + 16]
-        src = [np.ascontiguousarray(imread(p, cv2.IMREAD_UNCHANGED)[:, ::-1]) for p in batch] if flip else batch
+        if flip or not batch[0].endswith('.png'):  # predictor's file loader reads multi-page TIFFs as 3-channel: pass arrays
+            src = [imread(p, cv2.IMREAD_UNCHANGED) for p in batch]
+            src = [np.ascontiguousarray(x[:, ::-1]) if flip else x for x in src]
+        else: src = batch
         for p, r in zip(batch, model.predict(src, imgsz=IMGSZ, conf=0.001, iou=0.6, max_det=300, device=DEVICE, verbose=False, half=DEVICE == 0)):
             iid = int(os.path.splitext(os.path.basename(p))[0]); H, W = r.orig_shape; sizes[iid] = (H, W)
             xyxy = r.boxes.xyxy.cpu().numpy().copy()
@@ -121,6 +124,15 @@ def main():
             if cond == 'tta': df = fuse([df, predict(model, files, flip=True)[0]], sizes)
             df.to_csv(f"{WORK}/preds/{m['tag']}_{cond}.csv", index=False)
             print(f"{m['tag']} {cond}: {len(df)} boxes, {time.time() - t0:.0f}s", flush=True)
+        if PREDICT_TEST:
+            TEST_IMG = f'{IN}/data_test/data_test/VIS'; d = f"{OUT}/test_{'-'.join(map(str, m['bands']))}_{m['norm']}"
+            if not os.path.isdir(d):
+                os.makedirs(d)
+                with ProcessPoolExecutor(os.cpu_count()) as ex:
+                    list(ex.map(prep, [(f'{TEST_IMG}/{f}', f"{d}/{os.path.splitext(f)[0]}", m['bands'], m['norm'], None) for f in os.listdir(TEST_IMG) if f.endswith('.png')], chunksize=8))
+            files = sorted(glob.glob(f'{d}/*'), key=lambda p: int(os.path.splitext(os.path.basename(p))[0]))
+            df, _ = predict(model, files); df.to_csv(f"{WORK}/preds/{m['tag']}_test.csv", index=False)
+            print(f"{m['tag']} test: {len(files)} images, {len(df)} boxes, {time.time() - t0:.0f}s", flush=True)
     json.dump(runs, open(f'{WORK}/runs.json', 'w'), indent=1)
     os.system(f'rm -rf {OUT}'); print('DONE', flush=True)
 
