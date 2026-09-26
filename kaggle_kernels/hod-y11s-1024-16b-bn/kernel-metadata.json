@@ -1,0 +1,19 @@
+{
+ "id": "hosen42/hod-y11s-1024-16b-bn",
+ "title": "hod-y11s-1024-16b-bn",
+ "code_file": "train_kernel.py",
+ "language": "python",
+ "kernel_type": "script",
+ "is_private": true,
+ "enable_gpu": true,
+ "enable_tpu": false,
+ "enable_internet": true,
+ "dataset_sources": [
+  "moderantnoukoussi/hyperspectral-object-detection-challenge-2026"
+ ],
+ "kernel_sources": [],
+ "model_sources": [],
+ "competition_sources": [
+  "hyperspectral-object-detection-challenge-2026"
+ ]
+}
