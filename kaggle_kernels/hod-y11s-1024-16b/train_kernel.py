@@ -4,17 +4,15 @@
 import os, sys, json, glob, random, subprocess, time
 subprocess.run([sys.executable, '-m', 'pip', 'install', '-q', '-U', 'ultralytics', 'pycocotools'], check=False)
 
-# ---- CONFIG (rewritten per experiment) ----
+# ---- CONFIG ----
 MODEL = 'yolo11s.pt'
 IMGSZ = 1024
 EPOCHS = 50
 BATCH = 16
-BANDS = [5, 8, 13]          # 3 bands -> pseudo-RGB; use list(range(16)) for all bands
-EXTRA = {}                  # extra YOLO.train kwargs
-FULL_DATA = False           # True: train on train+val (final model), val metrics then meaningless
-NORM = 'global'            # 'global' | 'band' (per-band per-image percentile scaling)
-STEM_INIT = 'rgb3'         # >3 bands: 'rgb3' = Ultralytics default (RGB filters in channels 0-2, rest random); 'mean' = all channels from mean RGB filter
-# --------------------------------------------
+BANDS = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15]
+EXTRA = {}
+FULL_DATA = False
+# ----------------
 
 import numpy as np, cv2, pandas as pd
 import xml.etree.ElementTree as ET
@@ -49,18 +47,15 @@ def x2cube(img, cell=4):
     img = img[:M // cell * cell, :N // cell * cell]; M, N = img.shape  # frame sizes vary by a few px
     return img.reshape(M // cell, cell, N // cell, cell).transpose(0, 2, 1, 3).reshape(M // cell, N // cell, cell * cell)
 
-def to_uint8(cube, norm='global'):
-    """'global': one percentile range for all bands (keeps the illumination spectrum); 'band': per-band range per image
-    (white-balance-like; cancels the train/test illumination shift found in the EDA)."""
-    ax = (0, 1) if norm == 'band' else None
-    lo, hi = np.percentile(cube, 0.5, axis=ax), np.percentile(cube, 99.5, axis=ax)
-    return np.clip((cube.astype(np.float32) - lo) / np.maximum(hi - lo, 1) * 255, 0, 255).astype(np.uint8)
+def to_uint8(cube):
+    lo, hi = np.percentile(cube, 0.5), np.percentile(cube, 99.5)
+    return np.clip((cube.astype(np.float32) - lo) / max(hi - lo, 1) * 255, 0, 255).astype(np.uint8)
 
 def process(args):
     src, stem, split = args
     from PIL import Image
     raw = np.array(Image.open(src)); raw = raw[..., 0] if raw.ndim == 3 else raw
-    cube = to_uint8(x2cube(raw), NORM)
+    cube = to_uint8(x2cube(raw))
     if NCH == 3:
         cv2.imwrite(f'{DATA}/images/{split}/{stem}.png', np.ascontiguousarray(cube[:, :, BANDS][:, :, ::-1]))
     else:
@@ -109,21 +104,7 @@ print(f'prep done in {time.time()-t0:.0f}s: train {sum(v=="train" for v in split
 
 # ---- train ----
 is_detr = 'rtdetr' in MODEL
-def build_stem_init(model_name, nch):
-    """Pretrained checkpoint with an nch-channel stem whose every input channel is the mean of the RGB filters (x3/nch keeps
-    the response to a grey image unchanged). Ultralytics' own loader copies RGB into channels 0-2 and leaves the rest random."""
-    import copy, torch
-    from ultralytics.nn.tasks import DetectionModel
-    src = YOLO(model_name).model
-    m = DetectionModel(copy.deepcopy(src.yaml), ch=nch, nc=src.yaml['nc'], verbose=False); m.load(src, verbose=False)
-    w = src.model[0].conv.weight.data.float()
-    m.model[0].conv.weight.data.copy_(w.mean(1, keepdim=True).repeat(1, nch, 1, 1) * (3.0 / nch))
-    m.names = src.names; m.args = getattr(src, 'args', {})
-    path = f'{WORK}/{os.path.splitext(os.path.basename(model_name))[0]}_{nch}ch_mean.pt'
-    torch.save({'model': m, 'train_args': dict(m.args) if isinstance(m.args, dict) else {}}, path); return path
-MODEL_PATH = build_stem_init(MODEL, NCH) if STEM_INIT == 'mean' and NCH != 3 and not is_detr else MODEL
-print('model init:', MODEL_PATH, flush=True)
-model = (RTDETR if is_detr else YOLO)(MODEL_PATH)
+model = (RTDETR if is_detr else YOLO)(MODEL)
 kw = dict(data=f'{DATA}/data.yaml', imgsz=IMGSZ, epochs=EPOCHS, batch=BATCH, device=0, workers=4, project=WORK, name='run', exist_ok=True,
           hsv_h=0.015 if NCH == 3 else 0.0, hsv_s=0.7 if NCH == 3 else 0.0, hsv_v=0.4, bgr=0.0, fliplr=0.5, mosaic=1.0, close_mosaic=10, scale=0.5,
           patience=100, plots=False, cache=False, amp=True, seed=0, deterministic=False)
@@ -134,7 +115,7 @@ try:
     model.train(**kw)
 except Exception as e:
     print('multi-GPU training failed, falling back to single GPU:', repr(e)[:300], flush=True)
-    kw['device'] = 0; model = (RTDETR if is_detr else YOLO)(MODEL_PATH); model.train(**kw)
+    kw['device'] = 0; model = (RTDETR if is_detr else YOLO)(MODEL); model.train(**kw)
 best = f'{WORK}/run/weights/best.pt'
 os.system(f'cp {best} {WORK}/best.pt; cp {WORK}/run/results.csv {WORK}/results.csv')
 
@@ -163,7 +144,7 @@ if not FULL_DATA:
     prec = E.eval['precision']
     score = {'mAP50-95': float(E.stats[0]), 'mAP50': float(E.stats[1]), 'per_class': {n: float(prec[:, :, k, 0, -1][prec[:, :, k, 0, -1] > -1].mean()) for k, n in enumerate(CLASSES)}}
     print('VAL_SCORE', json.dumps(score), flush=True)
-score.update({'model': MODEL, 'imgsz': IMGSZ, 'epochs': EPOCHS, 'batch': BATCH, 'bands': BANDS, 'extra': EXTRA, 'full_data': FULL_DATA, 'stem_init': STEM_INIT, 'norm': NORM})
+score.update({'model': MODEL, 'imgsz': IMGSZ, 'epochs': EPOCHS, 'batch': BATCH, 'bands': BANDS, 'extra': EXTRA, 'full_data': FULL_DATA})
 json.dump(score, open(f'{WORK}/val_score.json', 'w'), indent=1)
 sub = predict_csv(best, 'test', f'{WORK}/submission.csv')
 if rank_stems:  # Phase 2 needs ONE csv with test + ranking predictions (2000 images), same single model

@@ -4,17 +4,17 @@
 import os, sys, json, glob, random, subprocess, time
 subprocess.run([sys.executable, '-m', 'pip', 'install', '-q', '-U', 'ultralytics', 'pycocotools'], check=False)
 
-# ---- CONFIG (rewritten per experiment) ----
+# ---- CONFIG ----
 MODEL = 'yolo11s.pt'
 IMGSZ = 1024
 EPOCHS = 50
 BATCH = 16
-BANDS = [5, 8, 13]          # 3 bands -> pseudo-RGB; use list(range(16)) for all bands
-EXTRA = {}                  # extra YOLO.train kwargs
-FULL_DATA = False           # True: train on train+val (final model), val metrics then meaningless
-NORM = 'global'            # 'global' | 'band' (per-band per-image percentile scaling)
-STEM_INIT = 'rgb3'         # >3 bands: 'rgb3' = Ultralytics default (RGB filters in channels 0-2, rest random); 'mean' = all channels from mean RGB filter
-# --------------------------------------------
+BANDS = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15]
+EXTRA = {}
+FULL_DATA = False
+STEM_INIT = 'mean'
+NORM = 'band'
+# ----------------
 
 import numpy as np, cv2, pandas as pd
 import xml.etree.ElementTree as ET

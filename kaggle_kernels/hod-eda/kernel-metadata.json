@@ -1,0 +1,19 @@
+{
+ "id": "hosen42/hod-eda",
+ "title": "hod-eda",
+ "code_file": "eda_dataset.py",
+ "language": "python",
+ "kernel_type": "script",
+ "is_private": true,
+ "enable_gpu": false,
+ "enable_tpu": false,
+ "enable_internet": false,
+ "dataset_sources": [
+  "moderantnoukoussi/hyperspectral-object-detection-challenge-2026"
+ ],
+ "kernel_sources": [],
+ "model_sources": [],
+ "competition_sources": [
+  "hyperspectral-object-detection-challenge-2026"
+ ]
+}
