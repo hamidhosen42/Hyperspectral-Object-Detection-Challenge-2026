@@ -100,6 +100,7 @@ for s in stems:
             gt_anns.append({'id': len(gt_anns) + 1, 'image_id': int(s), 'category_id': CLS2ID[name], 'bbox': [x1, y1, x2 - x1, y2 - y1], 'area': (x2 - x1) * (y2 - y1), 'iscrowd': 0})
     if s in val_stems: gt_images.append({'id': int(s), 'width': W, 'height': H})
     open(f'{DATA}/labels/{split_of[s]}/{s}.txt', 'w').write('\n'.join(lines))
+    if FULL_DATA and s in val_stems: open(f'{DATA}/labels/val/{s}.txt', 'w').write('\n'.join(lines))  # keeps a sane (optimistic) val curve
 jobs = [(f'{TRAIN_IMG}/{s}.png', s, split_of[s]) for s in stems] + [(f'{TEST_IMG}/{s}.png', s, 'test') for s in test_stems]
 jobs += [(f'{RANK_IMG}/{s}.png', s, 'ranking') for s in rank_stems]
 if not FULL_DATA: pass
@@ -150,13 +151,14 @@ try:
 except Exception as e:
     print('multi-GPU training failed, falling back to single GPU:', repr(e)[:300], flush=True)
     kw['device'] = 0; model = (RTDETR if is_detr else YOLO)(MODEL_PATH); model.train(**kw)
-best = f'{WORK}/run/weights/best.pt'
+best = f'{WORK}/run/weights/{"last" if FULL_DATA else "best"}.pt'  # full-data: val is in train, so take the end of the schedule
 os.system(f'cp {best} {WORK}/best.pt; cp {WORK}/run/results.csv {WORK}/results.csv')
 
 # ---- predict helper (single model; optional hflip TTA via WBF of the model's own outputs is done offline) ----
 def predict_csv(weights, split, out, conf=0.001, iou=0.6, max_det=300):
     m = (RTDETR if is_detr else YOLO)(weights)
-    files = sorted(glob.glob(f'{DATA}/images/{split}/*'), key=lambda p: int(os.path.splitext(os.path.basename(p))[0]))
+    files = sorted((f for f in glob.glob(f'{DATA}/images/{split}/*') if f.endswith(('.png', '.tiff'))),  # skip cache='disk' .npy files
+                   key=lambda p: int(os.path.splitext(os.path.basename(p))[0]))
     rows = []
     from ultralytics.utils.patches import imread
     for i in range(0, len(files), 32):

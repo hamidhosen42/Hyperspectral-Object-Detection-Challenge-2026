@@ -1,6 +1,6 @@
 {
- "id": "hosen42/hod-y11m-1024",
- "title": "hod-y11m-1024",
+ "id": "hosen42/hod-final-26s-16b-full",
+ "title": "hod-final-26s-16b-full",
  "code_file": "train_kernel.py",
  "language": "python",
  "kernel_type": "script",
@@ -13,5 +13,7 @@
  ],
  "kernel_sources": [],
  "model_sources": [],
- "competition_sources": []
+ "competition_sources": [
+  "hyperspectral-object-detection-challenge-2026"
+ ]
 }

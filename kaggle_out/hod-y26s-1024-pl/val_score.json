@@ -1,0 +1,43 @@
+{
+ "mAP50-95": 0.7004777506794869,
+ "mAP50": 0.9618819793167948,
+ "per_class": {
+  "apple": 0.7592043942665101,
+  "apple_plastic": 0.7784063490475572,
+  "badminton": 0.7837827503870608,
+  "banana": 0.7580916257162276,
+  "banana_plastic": 0.7586916780067877,
+  "car": 0.5317445043637854,
+  "car_toy": 0.7552852040730197,
+  "charger_head": 0.7438902281953262,
+  "e-bike": 0.5002578196287183,
+  "egg": 0.7907945949320706,
+  "egg_plastic": 0.8155214109692857,
+  "egg_wood": 0.8051173142524336,
+  "orange": 0.825395171096057,
+  "orange_plastic": 0.7483250236527709,
+  "people": 0.34509508965304325,
+  "rubik": 0.7480297830055185,
+  "stone_block": 0.4586419150628318,
+  "table_tennis": 0.7023246559217593
+ },
+ "model": "yolo26s.pt",
+ "imgsz": 1024,
+ "epochs": 50,
+ "batch": 16,
+ "bands": [
+  5,
+  8,
+  13
+ ],
+ "extra": {},
+ "full_data": false,
+ "stem_init": "rgb3",
+ "norm": "global",
+ "pseudo": {
+  "teacher_csv": "/kaggle/input/notebooks/hosen42/hod-y26s-1024/submission.csv",
+  "conf": 0.5,
+  "images": 956,
+  "boxes": 3163
+ }
+}

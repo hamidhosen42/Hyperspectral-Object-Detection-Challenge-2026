@@ -1,6 +1,6 @@
 {
- "E4a": {
-  "weights": "/kaggle/input/datasets/hosen42/hod-weights/e4a_y11s_16b_best.pt",
+ "E4c": {
+  "weights": "/kaggle/input/datasets/hosen42/hod-weights/e4c_y26s_16b_best.pt",
   "bands": [
    0,
    1,

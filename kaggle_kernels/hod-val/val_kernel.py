@@ -12,7 +12,7 @@ subprocess.run([sys.executable, '-m', 'pip', 'install', '-q', 'ultralytics==8.4.
 
 # ---- CONFIG ----
 MODELS = [  # tag, weights glob under /kaggle/input, bands, normalisation
-    {'tag': 'E4a', 'weights': '**/e4a_y11s_16b_best.pt', 'bands': list(range(16)), 'norm': 'global'},
+    {'tag': 'E4c', 'weights': '**/e4c_y26s_16b_best.pt', 'bands': list(range(16)), 'norm': 'global'},
 ]
 CONDITIONS = ['plain', 'tta', 'gain_ranking']
 PREDICT_TEST = True        # also write preds/<tag>_test.csv (plain) for the Phase 2 test half
