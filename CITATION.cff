@@ -1,0 +1,22 @@
+cff-version: 1.2.0
+message: "If you use this software, please cite it as below."
+title: "Hyperspectral Object Detection Challenge 2026: single-checkpoint 16-band YOLO solution"
+authors:
+  - family-names: Hosen
+    given-names: Md. Hamid
+license: AGPL-3.0
+repository-code: "https://github.com/hamidhosen42/Hyperspectral-Object-Detection-Challenge-2026"
+date-released: 2026-10-04
+keywords:
+  - hyperspectral imaging
+  - object detection
+  - YOLO
+  - Kaggle
+references:
+  - type: generic
+    title: "Hyperspectral Object Detection Challenge 2026"
+    authors:
+      - name: HotTracking2025
+    year: 2026
+    url: "https://kaggle.com/competitions/hyperspectral-object-detection-challenge-2026"
+    notes: "Kaggle"

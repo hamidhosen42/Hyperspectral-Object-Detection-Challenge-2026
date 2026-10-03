@@ -34,6 +34,7 @@ The repo covers:
 - [Rule compliance](#rule-compliance)
 - [Lessons learned](#lessons-learned)
 - [References](#references)
+- [Citation](#citation)
 - [License](#license)
 
 ---
@@ -72,6 +73,8 @@ All numbers below were measured. Validation uses pycocotools on the fixed 300-im
 | E4c | YOLO26s | **all 16 bands** | 0.703 | 0.839 | 0.830 | **0.5955** | 0.5186 |
 
 \* The Phase 2 submissions contain predictions for **841 of the 1,000 ranking images**. Kaggle's API rate-limited further downloads before the deadline, and the missing images count as misses. See [Lessons learned](#lessons-learned).
+
+A detailed solution write-up is in [`WRITEUP.md`](WRITEUP.md).
 
 The full experiment ledger, with per-class AP, TTA and shift-stress results and the keep/reject decision for every run, is in [`experiments.csv`](experiments.csv).
 
@@ -147,6 +150,8 @@ Reported metrics: mAP50-95, AP50, AP75, AP small/medium/large, per-class AP, pai
 ├── prep_data.py, train.py, predict.py, eval_local.py, tta_predict.py   # original local (MPS) pipeline
 ├── experiments.csv          # experiment ledger (measured values only)
 ├── RULE_COMPLIANCE.md       # how every competition rule is satisfied
+├── WRITEUP.md               # full solution write-up (Kaggle)
+├── CITATION.cff             # citation metadata
 └── LICENSE
 ```
 
@@ -204,6 +209,33 @@ Details are in [`RULE_COMPLIANCE.md`](RULE_COMPLIANCE.md).
 - Ultralytics YOLO: <https://github.com/ultralytics/ultralytics>
 - Hyperspectral Object Tracking challenge toolkit (`X2Cube`): <https://www.hsitracking.com/>
 - Solovyev et al., *Weighted Boxes Fusion*: <https://github.com/ZFTurbo/Weighted-Boxes-Fusion>
+
+---
+
+## Citation
+
+If you use the competition data, please cite the competition as Kaggle recommends:
+
+```bibtex
+@misc{hyperspectral-object-detection-challenge-2026,
+    author       = {HotTracking2025},
+    title        = {Hyperspectral Object Detection Challenge 2026},
+    year         = {2026},
+    howpublished = {\url{https://kaggle.com/competitions/hyperspectral-object-detection-challenge-2026}},
+    note         = {Kaggle}
+}
+```
+
+If this code or its analysis helps your work, please cite the repository (GitHub's "Cite this repository" button reads [`CITATION.cff`](CITATION.cff)):
+
+```bibtex
+@software{hosen2026hod,
+    author = {Hosen, Md. Hamid},
+    title  = {Hyperspectral Object Detection Challenge 2026: single-checkpoint 16-band YOLO solution},
+    year   = {2026},
+    url    = {https://github.com/hamidhosen42/Hyperspectral-Object-Detection-Challenge-2026}
+}
+```
 
 ---
 
