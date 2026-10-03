@@ -128,6 +128,19 @@ def pipeline():
     fig.savefig(f'{OUT}/06_pipeline.png', facecolor=SURF); plt.close(fig)
 
 
+def card():
+    """Kaggle write-up card / thumbnail: 2:1 (560x280 and a 2x 1120x560 version). Big type so it reads as a thumbnail."""
+    for scale, name in ((1, '00_card_560x280.png'), (2, '00_card_1120x560.png')):
+        fig = plt.figure(figsize=(5.6, 2.8), dpi=100 * scale)
+        fig.text(0.06, 0.80, 'Hyperspectral Object Detection 2026', fontsize=11, color=INK2)
+        fig.text(0.06, 0.55, '16 bands beat\nany 3-band composite', fontsize=21, fontweight='bold', color=INK, linespacing=1.05)
+        fig.add_artist(plt.Line2D([0.06, 0.94], [0.36, 0.36], color=GRID, lw=1.5))
+        for x, big, small, col in [(0.06, '+0.026', 'test mAP, 16 vs 3 bands', BLUE), (0.40, '0.5955', 'best public test', INK), (0.70, 'AUC 0.90', 'domain shift', ORANGE)]:
+            fig.text(x, 0.17, big, fontsize=17, fontweight='bold', color=col)
+            fig.text(x, 0.07, small, fontsize=8.5, color=INK2)
+        fig.savefig(f'{OUT}/{name}', facecolor=SURF); plt.close(fig)
+
+
 if __name__ == '__main__':
-    cover(); results(); val_vs_test(); domain_shift(); spectral(); pipeline()
+    card(); cover(); results(); val_vs_test(); domain_shift(); spectral(); pipeline()
     print('\n'.join(sorted(f for f in os.listdir(OUT) if f.endswith('.png'))))
