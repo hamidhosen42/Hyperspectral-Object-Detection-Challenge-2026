@@ -12,6 +12,8 @@
 
 </div>
 
+![Cover](assets/01_cover.png)
+
 This repository holds my end-to-end solution for Track 1 of the *2nd Hyperspectral Remote Sensing Data Processing and Application Challenge*, hosted on Kaggle. The task is to detect and classify 18 object categories, including look-alike pairs such as real versus plastic fruit, in 16-band visible-light hyperspectral images.
 
 The repo covers:
@@ -74,6 +76,8 @@ All numbers below were measured. Validation uses pycocotools on the fixed 300-im
 
 \* The Phase 2 submissions contain predictions for **841 of the 1,000 ranking images**. Kaggle's API rate-limited further downloads before the deadline, and the missing images count as misses. See [Lessons learned](#lessons-learned).
 
+![Public test score by model](assets/02_results.png)
+
 A detailed solution write-up is in [`WRITEUP.md`](WRITEUP.md).
 
 The full experiment ledger, with per-class AP, TTA and shift-stress results and the keep/reject decision for every run, is in [`experiments.csv`](experiments.csv).
@@ -86,11 +90,18 @@ The full experiment ledger, with per-class AP, TTA and shift-stress results and 
 2. **Test and ranking images are distinct acquisition domains.** A classifier on simple per-band image statistics separates train from test with AUC 0.89, and train from ranking with AUC 0.90; val vs train scores only 0.51. The ranking set is shifted the same way as test, but further (relative band brightness differs by up to ±12%).
 3. **Material confusion is not the bottleneck.** On validation, every matched box in the real/counterfeit groups gets the right material. The loss comes from box precision: mAP50 ≈ 0.96, but mAP50-95 ≈ 0.70.
 4. **Spectral information separates the look-alike materials.** From a box's mean spectrum alone, band 5/8/13 pseudo-RGB tells banana from plastic banana with 0.68 balanced accuracy; all 16 bands, normalised for brightness, reach 0.996.
+![Hold-out vs test](assets/03_val_vs_test.png)
+
+| ![Domain shift](assets/04_domain_shift.png) | ![Spectral separability](assets/05_spectral_separability.png) |
+|---|---|
+
 5. **Plain validation mAP is a weak predictor of test score.** Among early checkpoints, AP75 on the test-like STRESS subset ranked the models in the same order as the real test score, where plain mAP did not.
 
 ---
 
 ## Method
+
+![Pipeline](assets/06_pipeline.png)
 
 ```text
 16-bit mosaic PNG ──X2Cube(4×4)──▶ 16-band cube ──percentile → uint8──▶ 16-page TIFF
@@ -146,6 +157,7 @@ Reported metrics: mAP50-95, AP50, AP75, AP small/medium/large, per-class AP, pai
 ├── splits/                  # val / stress lists, illumination gains, ranking image statistics
 ├── results/                 # per-experiment validation JSON
 ├── submissions/             # Phase 2 CSVs that were submitted
+├── assets/                  # figures (make_figures.py renders them from measured results)
 ├── fetch_data.py            # rate-limit-aware per-file downloader for competition / mirror data
 ├── prep_data.py, train.py, predict.py, eval_local.py, tta_predict.py   # original local (MPS) pipeline
 ├── experiments.csv          # experiment ledger (measured values only)
