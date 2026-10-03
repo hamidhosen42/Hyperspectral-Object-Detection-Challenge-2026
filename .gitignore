@@ -21,3 +21,7 @@ val_fused.csv
 
 # local inference cache / splits artefacts
 cache/
+.venv/
+
+# local intermediate predictions
+preds/
