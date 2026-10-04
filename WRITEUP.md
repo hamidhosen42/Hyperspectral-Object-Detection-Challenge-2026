@@ -1,7 +1,8 @@
 # 16 bands beat any 3-band composite: a single-checkpoint YOLO solution and what hold-out validation missed
 
 **Hyperspectral Object Detection Challenge 2026 · Team: Md. Hamid Hosen**
-Code: <https://github.com/hamidhosen42/Hyperspectral-Object-Detection-Challenge-2026>
+Code: <https://github.com/hamidhosen42/Hyperspectral-Object-Detection-Challenge-2026>  
+Kaggle write-up: <https://www.kaggle.com/w/116724> · DOI: [10.34740/KAGGLE/W/116724](https://doi.org/10.34740/KAGGLE/W/116724)
 
 ---
 

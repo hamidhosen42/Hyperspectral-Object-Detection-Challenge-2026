@@ -9,6 +9,8 @@
 [![PyTorch](https://img.shields.io/badge/PyTorch-2.x-EE4C2C?logo=pytorch&logoColor=white)](https://pytorch.org/)
 [![Ultralytics](https://img.shields.io/badge/Ultralytics-8.4.155-111F68)](https://github.com/ultralytics/ultralytics)
 [![License: AGPL v3](https://img.shields.io/badge/License-AGPL_v3-blue.svg)](LICENSE)
+[![DOI](https://img.shields.io/badge/DOI-10.34740%2FKAGGLE%2FW%2F116724-20BEFF)](https://doi.org/10.34740/KAGGLE/W/116724)
+[![Kaggle Write-up](https://img.shields.io/badge/Kaggle-Write--up-20BEFF?logo=kaggle&logoColor=white)](https://www.kaggle.com/w/116724)
 
 </div>
 
@@ -78,7 +80,7 @@ All numbers below were measured. Validation uses pycocotools on the fixed 300-im
 
 ![Public test score by model](assets/02_results.png)
 
-A detailed solution write-up is in [`WRITEUP.md`](WRITEUP.md).
+A detailed solution write-up is published on Kaggle ([kaggle.com/w/116724](https://www.kaggle.com/w/116724), DOI [10.34740/KAGGLE/W/116724](https://doi.org/10.34740/KAGGLE/W/116724)); the same text is in [`WRITEUP.md`](WRITEUP.md).
 
 The full experiment ledger, with per-class AP, TTA and shift-stress results and the keep/reject decision for every run, is in [`experiments.csv`](experiments.csv).
 
@@ -238,7 +240,21 @@ If you use the competition data, please cite the competition as Kaggle recommend
 }
 ```
 
-If this code or its analysis helps your work, please cite the repository (GitHub's "Cite this repository" button reads [`CITATION.cff`](CITATION.cff)):
+If this work helps you, please cite the solution write-up (DOI [10.34740/KAGGLE/W/116724](https://doi.org/10.34740/KAGGLE/W/116724)):
+
+```bibtex
+@article{md__hamid_hosen_2026,
+    title     = {16 bands beat any 3-band composite: a single-checkpoint YOLO solution},
+    url       = {https://www.kaggle.com/w/116724},
+    DOI       = {10.34740/KAGGLE/W/116724},
+    journal   = {Kaggle},
+    publisher = {Kaggle},
+    author    = {Md. Hamid Hosen},
+    year      = {2026}
+}
+```
+
+The code itself can be cited as software (GitHub's "Cite this repository" button reads [`CITATION.cff`](CITATION.cff)):
 
 ```bibtex
 @software{hosen2026hod,

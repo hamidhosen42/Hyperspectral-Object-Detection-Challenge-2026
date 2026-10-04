@@ -6,12 +6,25 @@ authors:
     given-names: Md. Hamid
 license: AGPL-3.0
 repository-code: "https://github.com/hamidhosen42/Hyperspectral-Object-Detection-Challenge-2026"
+doi: "10.34740/KAGGLE/W/116724"
 date-released: 2026-10-04
 keywords:
   - hyperspectral imaging
   - object detection
   - YOLO
   - Kaggle
+preferred-citation:
+  type: article
+  title: "16 bands beat any 3-band composite: a single-checkpoint YOLO solution"
+  authors:
+    - family-names: Hosen
+      given-names: Md. Hamid
+  journal: Kaggle
+  publisher:
+    name: Kaggle
+  year: 2026
+  doi: "10.34740/KAGGLE/W/116724"
+  url: "https://www.kaggle.com/w/116724"
 references:
   - type: generic
     title: "Hyperspectral Object Detection Challenge 2026"
