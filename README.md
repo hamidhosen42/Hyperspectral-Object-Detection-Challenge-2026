@@ -38,7 +38,7 @@ The repo covers:
 - [Rule compliance](#rule-compliance)
 - [Lessons learned](#lessons-learned)
 - [References](#references)
-- [Citation](#citation)
+- [Citation](#citation) (DOI 10.34740/KAGGLE/W/116724)
 - [License](#license)
 
 ---
